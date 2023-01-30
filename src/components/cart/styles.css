@@ -1,0 +1,18 @@
+.cart {
+    align-self: center;
+    background-image: url(./images/cart.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 48px;
+    height: 48px;
+}
+.amountCart {
+    background: #d33;
+    border-radius: 50%;
+    border: 1px solid #ddd;
+    width: 16px;
+    height: 16px;
+    font-size: 11px;
+    float: right;
+    color: #ddd;
+}

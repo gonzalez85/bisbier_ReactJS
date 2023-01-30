@@ -4,9 +4,12 @@
 }
 html,
 body {
-  font-size: 18px;
-  /* color: #fff; */
-  background-color:  #111;
+  background: #111 url(./images/bg.jpg) center repeat-y fixed;
+  background-size: cover;
+  margin: 0px;
+  font-family: "Architects Daughter", cursive;
+  background-color: #222;
+  color: #bbb;
 }
 h1 {
   max-width: 940px;
@@ -19,10 +22,17 @@ h1 {
 .App {
   min-height: 100vh;
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   text-align: center;
+}
+header {
+  width: 100%;
+}
+.banner{
+  width: 100%;
 }
 .contPrincipal {
   min-height: 600px;
@@ -32,4 +42,13 @@ h1 {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+.logo {
+  height: 64px;
+}
+
+h1 {
+  color:#fff;
+  text-align: center;
+  font-family: 'Clicker Script', cursive;
 }
