@@ -8,7 +8,7 @@ import { useState } from 'react';
 import NavContainer from './components/navContainer';
 import NavBar from './components/navBar';
 import Cart from './components/cart';
-import MainContainer from './components/mainContainer';
+import ArticleContainer from './components/articleContainer';
 
 function App() {
 
@@ -33,24 +33,26 @@ function App() {
         </NavContainer>
         <img src="./images/banner.jpg" className="banner" alt="Imagen de portada"></img>
       </header>
-      <MainContainer>
-        <h1>Bienvenidos a la tienda de Bisbier!</h1>
-        <ProductCard
-          style="Blonde Ale"
-          description="La Rubia más refrescante de la familia. Ligera y equilibrada, ideal para los esos días calurosos de verano (y los fríos también ;)"
-          price="$ 150"
-          image="blonde"/>
-        <ProductCard 
-          style="Amber Ale"
-          description="La más dulce. Destacada por sus maltas complejas sabor caramelo."
-          price="$ 150"
-          image="amber"/>
-        <ProductCard 
-          style="India Pale Ale"
-          description="La más amarga. Destacada por su delicioso aroma a los mejores lúpulos frutales."
-          price="$ 150"
-          image="ipa"/>
-      </MainContainer>
+      <main>
+        <ArticleContainer>
+          <h1>Bienvenidos a la tienda de Bisbier!</h1>
+          <ProductCard
+            style="Blonde Ale"
+            description="La Rubia más refrescante de la familia. Ligera y equilibrada, ideal para los esos días calurosos de verano (y los fríos también ;)"
+            price="$ 150"
+            image="blonde"/>
+          <ProductCard 
+            style="Amber Ale"
+            description="La más dulce. Destacada por sus maltas complejas sabor caramelo."
+            price="$ 150"
+            image="amber"/>
+          <ProductCard 
+            style="India Pale Ale"
+            description="La más amarga. Destacada por su delicioso aroma a los mejores lúpulos frutales."
+            price="$ 150"
+            image="ipa"/>
+        </ArticleContainer>
+      </main>
     </div>
 
 
