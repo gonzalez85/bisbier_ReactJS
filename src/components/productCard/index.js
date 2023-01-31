@@ -1,12 +1,12 @@
 import React from "react";
-import "../css/ProductCard.css";
+import "./styles.css";
 
 function ProductCard(props) {
   return(
     <div className="contProductCard">
       <img 
       className="imgProductCard"
-      src={require(`../images/${props.image}.jpg`)}
+      src={require(`./images/${props.image}.jpg`)}
       alt="Cerveza Blonde" />
       <div className="contDescProductCard">
         <p className="titleProduct">{props.style}</p>
