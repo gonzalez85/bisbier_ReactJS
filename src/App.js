@@ -1,6 +1,7 @@
 
 import './App.css';
-import logo from './images/Logo 2.0 FT.png'
+import logo from './images/Logo 2.0 FT.png';
+import banner from './images/banner.jpg';
 import NavContainer from './components/navContainer';
 import NavBar from './components/navBar';
 import CartWidget from './components/cartWidget';
@@ -18,7 +19,7 @@ function App() {
               url="#" />
             <CartWidget />
         </NavContainer>
-        <img src="./images/banner.jpg" className="banner" alt="Imagen de portada"></img>
+        <img src={banner} className="banner" alt="Imagen de portada"></img>
       </header>
       <main>
         <ArticleContainer>
