@@ -17,6 +17,7 @@
 }
 .contDescProductCard {
   text-align: right;
+  width: 560px;
   padding: 40px;
   font-weight: 400;
   line-height: 1.5rem;
@@ -53,3 +54,7 @@
   background-color: #444;
   border-color: #ccc;
   }
+.clearLink {
+  color:unset;
+  text-decoration: none;
+}

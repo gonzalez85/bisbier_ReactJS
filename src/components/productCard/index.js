@@ -1,19 +1,20 @@
 import React from "react";
 import "./styles.css";
 
-function ProductCard(props) {
+function ProductCard({ props }) {
   return(
     <div className="contProductCard">
       <img 
-      className="imgProductCard"
-      src={require(`./images/${props.image}.jpg`)}
-      alt="Cerveza Blonde" />
+        className="imgProductCard"
+        src={`../images/${props.image}.jpg`}
+        alt="Cerveza Blonde" />
       <div className="contDescProductCard">
-        <p className="titleProduct">{props.style}</p>
+        <p className="titleProduct">{props.title}</p>
         <p className="descProduct">{props.description}</p>
-        <a href="#" className="btnForm">{props.price}</a>
+        <button href="#" className="btnForm">{props.price}</button>
       </div>
     </div>
   );
-}
+};
+
 export default ProductCard;
