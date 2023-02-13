@@ -1,7 +1,10 @@
 import React from "react";
 import "./styles.css";
+import { useParams } from "react-router";
 
 function ProductCard({ props }) {
+  let { id } = useParams();
+  
   return(
     <div className="contProductCard">
       <img 
@@ -10,7 +13,7 @@ function ProductCard({ props }) {
         alt="Cerveza Blonde" />
       <div className="contDescProductCard">
         <p className="titleProduct">{props.title}</p>
-        <p className="descProduct">{props.description}</p>
+        <p className="descProduct">{isNaN(id) ? props.description : props.fullDescription}</p>
         <button href="#" className="btnForm">{props.price}</button>
       </div>
     </div>
