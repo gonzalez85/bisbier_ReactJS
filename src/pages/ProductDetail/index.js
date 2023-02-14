@@ -5,6 +5,7 @@ import ProductCard from "../../components/productCard";
 import axios from "axios";
 
 const ProductDetail = () => {
+  const detail=true;
   const [product, setProduct] = useState({});
   let { id } = useParams();
   useEffect(() => {
@@ -15,7 +16,7 @@ const ProductDetail = () => {
   return (
     <ArticleContainer>
       <h1>Detalle del produto</h1>
-      <ProductCard props={product} />
+      <ProductCard props={product} detail={detail} />
     </ArticleContainer>
   )
 };

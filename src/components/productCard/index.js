@@ -2,7 +2,7 @@ import React from "react";
 import "./styles.css";
 import { useParams } from "react-router";
 
-function ProductCard({ props }) {
+function ProductCard({ props, detail }) {
   let { id } = useParams();
   
   return(
@@ -13,7 +13,7 @@ function ProductCard({ props }) {
         alt="Cerveza Blonde" />
       <div className="contDescProductCard">
         <p className="titleProduct">{props.title}</p>
-        <p className="descProduct">{isNaN(id) ? props.description : props.fullDescription}</p>
+        <p className="descProduct">{detail ? props.fullDescription : props.description}</p>
         <button href="#" className="btnForm">{props.price}</button>
       </div>
     </div>

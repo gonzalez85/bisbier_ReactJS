@@ -5,6 +5,7 @@ import ArticleContainer from "../../components/articleContainer";
 import ProductCard from "../../components/productCard";
 
 const Home = () => {
+  const detail=false;
   const [products, setProducts] = useState([]);
   useEffect(() => {
     axios("../data/products.json").then((res) =>
@@ -17,11 +18,11 @@ const Home = () => {
       {products.map(product => {
         return (
           <Link className="clearLink" key={product.id} to={`/product/${product.id}`}>
-            <ProductCard props={product} />
+            <ProductCard props={product} detail={detail} />
           </Link>
         );
         })
-      }
+      };
     </ArticleContainer>
   );
 };
