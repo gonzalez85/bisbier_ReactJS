@@ -1,9 +1,7 @@
 import React from "react";
 import "./styles.css";
-import { useParams } from "react-router";
 
 function ProductCard({ props, detail }) {
-  let { id } = useParams();
   
   return(
     <div className="contProductCard">
