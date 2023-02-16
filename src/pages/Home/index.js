@@ -3,6 +3,7 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import ArticleContainer from "../../components/articleContainer";
 import ProductCard from "../../components/productCard";
+import "./styles.css";
 
 const Home = () => {
   const detail=false;
@@ -22,7 +23,7 @@ const Home = () => {
           </Link>
         );
         })
-      };
+      }
     </ArticleContainer>
   );
 };

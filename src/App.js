@@ -7,7 +7,6 @@ import banner from './images/banner.jpg';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 
 //Components
-import NavContainer from './components/navContainer';
 import NavBar from './components/navBar';
 import CartWidget from './components/cartWidget';
 
@@ -21,13 +20,13 @@ function App() {
     <Router>
       <div className="App">
         <header>
-          <NavContainer>
+          <nav>
             <Link to="/">
               <img src={logo} className="logo" alt="logo" />
             </Link>
               <NavBar />
               <CartWidget />
-          </NavContainer>
+          </nav>
           <img src={banner} className="banner" alt="Imagen de portada" />
         </header>
           <Routes>

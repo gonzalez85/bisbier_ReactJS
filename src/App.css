@@ -50,3 +50,18 @@ header {
 main {
   width: 100%;
 }
+
+nav {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  opacity: 0.9;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1030;
+  opacity: 0.9;
+  background-color: #333;
+}

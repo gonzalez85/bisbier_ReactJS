@@ -17,7 +17,7 @@ const Category = () => {
   }, [id]);
   return (
     <ArticleContainer>
-      <h1>Usted está en la categoría: {id}</h1>
+      <h1>Usted está en la categoría: <span className="categoryId">{id}</span></h1>
       {filterCategory.map(product => {
         return (
           <Link className="clearLink" key={product.id} to={`/product/${product.id}`}>
