@@ -1,20 +1,18 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import ArticleContainer from "../../components/articleContainer";
 import ProductCard from "../../components/productCard";
 import "./styles.css";
+import ProductContext from "../../context/productContext";
 
 const Home = () => {
+
+  const { products } = useContext(ProductContext);
+
   const detail=false;
-  const [products, setProducts] = useState([]);
-  useEffect(() => {
-    axios("../data/products.json").then((res) =>
-      setProducts(res.data)
-    );
-  }, []);
+  
   return (
-    <ArticleContainer>
+    <ArticleContainer> //quitar
       <h1>Bienvenidos a la tienda de Bisbier!</h1>
       {products.map(product => {
         return (

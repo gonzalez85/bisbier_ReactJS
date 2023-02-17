@@ -12,7 +12,11 @@
     border: 1px solid #ddd;
     width: 16px;
     height: 16px;
-    font-size: 11px;
+    font-size: 10px;
     float: right;
     color: #ddd;
+    font-family: cursive;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

@@ -1,27 +1,21 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext } from "react";
 import { useParams } from "react-router";
 import ArticleContainer from "../../components/articleContainer";
 import ProductCard from "../../components/productCard";
-import axios from "axios";
+import ProductContext from "../../context/productContext";
 
 const ProductDetail = () => {
 
-  const detail=true;
-  const [product, setProduct] = useState({});
   let { id } = useParams();
-
-  useEffect(() => {
-    axios("../data/products.json").then((res) =>
-      setProduct(res.data[id])
-    );
-  }, [id]);
+  const { products } = useContext(ProductContext)
+  const detail=true;
 
   return (
     <ArticleContainer>
       <h1>Detalle del produto</h1>
-      <ProductCard props={product} detail={detail} />
+      <ProductCard props={products[id]} detail={detail} />
     </ArticleContainer>
   )
-}
+};
 
 export default ProductDetail;

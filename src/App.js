@@ -15,27 +15,35 @@ import Home from './pages/Home';
 import Category from './pages/Category';
 import ProductDetail from './pages/ProductDetail';
 
+//Context
+import { ProductProvider } from './context/productContext';
+import { CartProductProvider } from './context/cartProductsContext';
+
 function App() {
   return (
-    <Router>
-      <div className="App">
-        <header>
-          <nav>
-            <Link to="/">
-              <img src={logo} className="logo" alt="logo" />
-            </Link>
-              <NavBar />
-              <CartWidget />
-          </nav>
-          <img src={banner} className="banner" alt="Imagen de portada" />
-        </header>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/category/:id" element={<Category />} />
-            <Route path="/product/:id" element={<ProductDetail />} />
-          </Routes>
-      </div>
-    </Router>
+    <ProductProvider>
+      <Router>
+        <div className="App">
+          <CartProductProvider>
+            <header>
+              <nav>
+                <Link to="/">
+                  <img src={logo} className="logo" alt="logo" />
+                </Link>
+                  <NavBar />
+                  <CartWidget />
+              </nav>
+              <img src={banner} className="banner" alt="Imagen de portada" />
+            </header>
+          </CartProductProvider>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/category/:id" element={<Category />} />
+              <Route path="/product/:id" element={<ProductDetail />} />
+            </Routes>
+        </div>
+      </Router>
+    </ProductProvider>
   );
 };
 
