@@ -1,13 +1,13 @@
 import React, { useContext } from "react";
-import CartProductContext from "../../context/cartProductsContext";
+import CartProductsContext from "../../context/cartProductsContext";
 import './styles.css';
 
 const CartWidget = () => {
 
-  const {cartProducts} = useContext(CartProductContext)
-  console.log(CartProductContext)
+  const { cartProducts } = useContext(CartProductsContext)
+  
   return (
-    <a href="#" title="Carrito" className="cartWidget">
+    <a href="/cart" title="Carrito" className="cartWidget">
       <p className="amountCart"><strong>{cartProducts.length}</strong></p>
     </a>
   );

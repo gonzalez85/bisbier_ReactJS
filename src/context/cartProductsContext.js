@@ -1,21 +1,28 @@
-import axios from 'axios';
-import { useState, createContext, useEffect } from 'react';
-const CartProductContext = createContext();
+import { useState, useEffect, createContext } from 'react';
 
-const CartProductProvider = ({children}) => {
+const CartProductsContext = createContext();
+
+
+
+const CartProductsProvider = ({ children }) => {
+
+  const productsInCart = [
+    { id: 0, title: "Blonde Ale", price: 150, quantity:2 },
+    { id: 2, title: "Amber Ale", price: 150, quantity:1 },
+  ];
 
   const [cartProducts, setCartProducts] = useState([]);
-  
-    useEffect(() => {
-      axios("../data/products.json").then((res) =>
-        setCartProducts(res.data)
-      );
-    }, []);
 
+  useEffect(() => {
+      setCartProducts(productsInCart)
+  }, []);
+ 
   return (
-    <CartProductContext.Provider value={{cartProducts, setCartProducts}}>{children}</CartProductContext.Provider>
+    <CartProductsContext.Provider value={{cartProducts, setCartProducts}}>
+      {children}
+    </CartProductsContext.Provider>
   )
 };
 
-export { CartProductProvider };
-export default CartProductContext;
+export { CartProductsProvider };
+export default CartProductsContext;

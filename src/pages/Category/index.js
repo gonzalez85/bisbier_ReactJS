@@ -1,32 +1,30 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext } from "react";
 import { useParams } from "react-router";
 import ArticleContainer from "../../components/articleContainer";
 import ProductCard from "../../components/productCard";
-import axios from "axios";
 import { Link } from "react-router-dom";
+import ProductContext from "../../context/productsContext";
 
 const Category = () => {
-  const [filterCategory, setFilterCategory] = useState([]);
+  
   let { id } = useParams();
-  useEffect(() => {
-    axios("../data/products.json").then((res) =>
-      setFilterCategory(res.data.filter(data => 
-        data.category.toLowerCase()===id)
-        )
-    );
-  }, [id]);
+  const { products } = useContext(ProductContext);
+  let category = products.filter(data => data.category.toLowerCase()===id);
+  
   return (
+    
     <ArticleContainer>
       <h1>Usted está en la categoría: <span className="categoryId">{id}</span></h1>
-      {filterCategory.map(product => {
+      
+      {category.map(product => {
         return (
           <Link className="clearLink" key={product.id} to={`/product/${product.id}`}>
-            <ProductCard props={product} /> 
+            <ProductCard props={product ? product : ""} /> 
           </Link>
         )
       })}
     </ArticleContainer>
   )
-}
+};
 
-export default Category
+export default Category;
