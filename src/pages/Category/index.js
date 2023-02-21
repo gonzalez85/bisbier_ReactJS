@@ -18,9 +18,7 @@ const Category = () => {
       
       {category.map(product => {
         return (
-          <Link className="clearLink" key={product.id} to={`/product/${product.id}`}>
-            <ProductCard props={product ? product : ""} /> 
-          </Link>
+          <ProductCard key={product.id} product={product ? product : ""} /> 
         )
       })}
     </ArticleContainer>

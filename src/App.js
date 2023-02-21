@@ -26,7 +26,6 @@ function App() {
       <CartProductsProvider>
         <Router>
           <div className="App">
-            
               <header>
                 <nav>
                   <Link to="/">

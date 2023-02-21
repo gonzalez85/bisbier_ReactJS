@@ -10,12 +10,11 @@ const CartProducts = () => {
   return (
     
     <ArticleContainer>
-      <h1>Carrito de compras<span className="categoryId"></span></h1>
+      <h1>Carrito de compras</h1>
       
       {cartProducts.map(product => {
         return (
             <CartProductCard key={product.id} props={product ? product : ""} /> 
-          
         )
       })}
     </ArticleContainer>

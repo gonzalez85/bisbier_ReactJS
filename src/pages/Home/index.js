@@ -15,9 +15,7 @@ const Home = () => {
       <h1>Bienvenidos a la tienda de Bisbier!</h1>
       {products.map(product => {
         return (
-          <Link className="clearLink" key={product.id} to={`/product/${product.id}`}>
-            <ProductCard props={product} detail={detail} />
-          </Link>
+          <ProductCard key={product.id} product={product} detail={detail} />
         );
         })
       }

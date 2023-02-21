@@ -6,7 +6,9 @@
     "description": "Una cerveza americana fácil de tomar, balanceada hacia la malta.",
     "fullDescription": "Una cerveza americana fácil de tomar, balanceada hacia la malta. Con 4.7% de alcohol y 18 IBU's de amargor.",
     "price": "$ 150",
-    "image": "blonde"
+    "image": "blonde",
+    "quantity": 1,
+    "stock": 20
   },
   {
     "id": 1,
@@ -15,7 +17,9 @@
     "description": "Una American Pale Ale decididamente amarga y lupulada, y moderadamente fuerte.",
     "fullDescription": "Una American Pale Ale decididamente amarga y lupulada, y moderadamente fuerte. Con 6.4% de alcohol y 55 IBU's de amargor.",
     "price": "$ 150",
-    "image": "ipa"
+    "image": "ipa",
+    "quantity": 1,
+    "stock": 20
   },
   {
     "id": 2,
@@ -24,7 +28,9 @@
     "description": "Una cerveza fácil de tomar, con un sabor dulce debido a las maltas crystal.",
     "fullDescription": "Una cerveza fácil de tomar, con un sabor dulce debido a las maltas crystal. Con 4.4% de alcohol y 25 IBU's de amargor.",
     "price": "$ 150",
-    "image": "amber"
+    "image": "amber",
+    "quantity": 1,
+    "stock": 20
   },
   {
     "id": 3,
@@ -33,7 +39,9 @@
     "description": "Una cerveza fácil de tomar. Focalizada en la malta con un dulzor inicial y un acabado seco y torrado.",
     "fullDescription": "Una cerveza fácil de tomar. Focalizada en la malta con un dulzor inicial y un acabado seco y torrado. Con 5.0% de alcohol y 30 IBU's de amargor.",
     "price": "$ 150",
-    "image": "irish"
+    "image": "irish",
+    "quantity": 1,
+    "stock": 20
   },
   {
     "id": 4,
@@ -42,7 +50,9 @@
     "description": "Una ale muy oscura, dulce, con un cuerpo pleno, ligeramente torrada. Con un suave toque a cacao.",
     "fullDescription": "Una ale muy oscura, dulce, con un cuerpo pleno, ligeramente torrada. Con un suave toque a cacao. Con 5.2% de alcohol y 28 IBU's de amargor.",
     "price": "$ 150",
-    "image": "stout"
+    "image": "stout",
+    "quantity": 1,
+    "stock": 20
   },
   {
     "id": 5,
@@ -51,7 +61,9 @@
     "description": "Una cerveza americana fácil de tomar, balanceada hacia la malta.",
     "fullDescription": "Una cerveza americana fácil de tomar, balanceada hacia la malta. Con 4.7% de alcohol y 18 IBU's de amargor.",
     "price": "$ 2500",
-    "image": "barril"
+    "image": "barril",
+    "quantity": 1,
+    "stock": 5
   },
   {
     "id": 6,
@@ -60,7 +72,9 @@
     "description": "Una American Pale Ale decididamente amarga y lupulada, y moderadamente fuerte.",
     "fullDescription": "Una American Pale Ale decididamente amarga y lupulada, y moderadamente fuerte. Con 6.4% de alcohol y 55 IBU's de amargor.",
     "price": "$ 3000",
-    "image": "barril"
+    "image": "barril",
+    "quantity": 1,
+    "stock": 3
   },
   {
     "id": 7,
@@ -69,7 +83,9 @@
     "description": "Hace que tu fiesta sea aún mas divertida.",
     "fullDescription": "Hace que tu fiesta sea aún mas divertida. Para que tu fiesta sea mejor aún, complementa con uno de nuestros barriles de cerveza!",
     "price": "$ 1000",
-    "image": "chopera"
+    "image": "chopera",
+    "quantity": 1,
+    "stock": 2
   },
   {
     "id": 8,
@@ -78,7 +94,9 @@
     "description": "Hace que tu fiesta sea aún mas divertida.",
     "fullDescription": "Hace que tu fiesta sea aún mas divertida. Para que tu fiesta sea mejor aún, complementa con uno de nuestros barriles de cerveza!",
     "price": "$ 1500",
-    "image": "chopera"
+    "image": "chopera",
+    "quantity": 1,
+    "stock": 2
   },
   {
     "id": 9,
@@ -87,7 +105,9 @@
     "description": "Sin descripción.",
     "fullDescription": "Sin descripción extendida.",
     "price": "$ 300",
-    "image": "undefined"
+    "image": "undefined",
+    "quantity": 1,
+    "stock": 0
   },
   {
     "id": 10,
@@ -96,6 +116,8 @@
     "description": "Sin descripción.",
     "fullDescription": "Sin descripción extendida.",
     "price": "$ 350",
-    "image": "undefined"
+    "image": "undefined",
+    "quantity": 1,
+    "stock": 30
   }
 ]

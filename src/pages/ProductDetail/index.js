@@ -14,7 +14,7 @@ const ProductDetail = () => {
   return (
     <ArticleContainer>
       <h1>Detalle del produto</h1>
-      <ProductCard props={product ? product : ""} detail={detail} />
+      <ProductCard product={product ? product : ""} detail={detail} />
     </ArticleContainer>
   );
 };
