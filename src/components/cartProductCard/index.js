@@ -3,7 +3,7 @@ import "./styles.css";
 import CartProductsContext from "../../context/cartProductsContext";
 
 function CartProductCard({ props, detail }) {
-  const { cartProducts, counter, increment, decrement, cartAdd, productToAdd } = useContext(CartProductsContext);
+  const { increment, decrement, cartAdd, productToAdd } = useContext(CartProductsContext);
     
   return(
     <div className="productCard">

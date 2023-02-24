@@ -1,4 +1,4 @@
-import { useState, useEffect, createContext } from 'react';
+import { useState, createContext } from 'react';
 
 const CartProductsContext = createContext();
 
@@ -9,11 +9,11 @@ const CartProductsProvider = ({ children }) => {
     { id: 2, title: "Amber Ale", price: 150, quantity:1 },
   ];
 
-  const [cartProducts, setCartProducts] = useState([]);
+  const [cartProducts, setCartProducts] = useState(productsInCart);
 
-  useEffect(() => {
-      setCartProducts(productsInCart)
-  }, []);
+  // useEffect(() => {
+  //     setCartProducts(productsInCart)
+  // }, []);
   
   const productToAdd = { id: 14, title: "Blondi Ale", price: 180, quantity:2 }
   const cartAdd = (productToAdd) => {
@@ -24,9 +24,13 @@ const CartProductsProvider = ({ children }) => {
   const [counter, setCounter] = useState(1);
 
   const increment = (counter) => counter < 99 ? setCounter(counter + 1) : counter;
-  const increment2 = (counter) => {console.log(productsInCart[0].quantity);
-    productsInCart[0].quantity = counter + 1;
-  console.log(productsInCart[0].quantity, counter);};
+  
+  const increment2 = (productQuantity) => {
+    
+    console.log(productQuantity);
+    console.log(productsInCart[0].quantity, productQuantity);
+    
+  };
 
   const decrement = () => counter > 1 ? setCounter(counter - 1) : counter;
 

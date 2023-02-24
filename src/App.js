@@ -19,32 +19,35 @@ import ProductDetail from './pages/ProductDetail';
 import { ProductsProvider } from './context/productsContext';
 import { CartProductsProvider } from './context/cartProductsContext';
 import CartProducts from './pages/cartProducts';
+import { CountersProvider } from './context/counterContext';
 
 function App() {
   return (
     <ProductsProvider>
       <CartProductsProvider>
-        <Router>
-          <div className="App">
-              <header>
-                <nav>
-                  <Link to="/">
-                    <img src={logo} className="logo" alt="logo" />
-                  </Link>
-                    <NavBar />
-                    <CartWidget />
-                </nav>
-                <img src={banner} className="banner" alt="Imagen de portada" />
-              </header>
-            
-              <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/category/:id" element={<Category />} />
-                <Route path="/product/:id" element={<ProductDetail />} />
-                <Route path="/cart" element={<CartProducts />} />
-              </Routes>
-          </div>
-        </Router>
+        <CountersProvider>
+          <Router>
+            <div className="App">
+                <header>
+                  <nav>
+                    <Link to="/">
+                      <img src={logo} className="logo" alt="logo" />
+                    </Link>
+                      <NavBar />
+                      <CartWidget />
+                  </nav>
+                  <img src={banner} className="banner" alt="Imagen de portada" />
+                </header>
+              
+                <Routes>
+                  <Route path="/" element={<Home />} />
+                  <Route path="/category/:id" element={<Category />} />
+                  <Route path="/product/:id" element={<ProductDetail />} />
+                  <Route path="/cart" element={<CartProducts />} />
+                </Routes>
+            </div>
+          </Router>
+        </CountersProvider>
       </CartProductsProvider>
     </ProductsProvider>
   );

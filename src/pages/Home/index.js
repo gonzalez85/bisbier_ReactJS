@@ -1,5 +1,4 @@
 import React, { useContext } from "react";
-import { Link } from "react-router-dom";
 import ArticleContainer from "../../components/articleContainer";
 import ProductCard from "../../components/productCard";
 import "./styles.css";

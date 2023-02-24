@@ -2,10 +2,14 @@ import React, { useContext } from "react";
 import "./styles.css";
 import CartProductsContext from "../../context/cartProductsContext";
 import { Link } from "react-router-dom";
+import CountersContext from "../../context/counterContext";
 
 function ProductCard({ product, detail}) {
-  const { cartProducts, counter, increment, increment2, decrement, cartAdd, productToAdd } = useContext(CartProductsContext);
+  const { cartAdd } = useContext(CartProductsContext);
+  const { increment, decrement, counters } = useContext(CountersContext);
   
+  // setCounters(countersCategory)
+
   return(
     <div className="productCard">
       <img 
@@ -33,8 +37,12 @@ function ProductCard({ product, detail}) {
           <div className="formAdd">
           <div className="counter">
             <button className="btnCount btnMinus" onClick={decrement}>-</button>
-            <span className="count">{product.quantity}</span>
-            <button className="btnCount btnPlus" onClick={() => increment2(product.quantity)}>+</button>
+            <span className="count">{
+            // console.log(counters["counter"+0])}{
+            //   console.log(counters)}{
+            counters["counter"+product.id]
+            }</span>
+            <button className="btnCount btnPlus" onClick={() => increment(counters["counter"+product.id], "counter"+product.id)}>+</button>
           </div>
           {/* <button href="#" className="btnForm" onClick={() => cartAdd(productToAdd)}>Agregar al carrito</button> */}
           <button href="#" className="btnForm" onClick={() => cartAdd(product)}>Agregar al carrito</button>
