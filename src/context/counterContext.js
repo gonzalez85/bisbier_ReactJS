@@ -1,33 +1,33 @@
-import {useState, createContext } from 'react';
+import axios from "axios";
+import React, { useEffect, useState, createContext  } from "react";
 
 const CountersContext = createContext();
 
 const CountersProvider = ({children}) => {
-	
-  const [counters, setCounters] = useState({
-		counter0:2,
-		counter1:1
-	});
+
+	const [counters, setCounters] = useState({});
   
-  const increment = (counter, id) => {
-		console.log(counter, id);
+	useEffect(() => {
+    axios("../data/products.json").then((res) =>{
+			let countersProducts = {}
+			res.data.map(e => countersProducts["counter"+e.id] = e.quantity)
+			setCounters(countersProducts)
+		});
+  }, []);
 
-		const newCounters ={
-			...counters,
-		}
-
-		console.log(counters, newCounters);
-
-		newCounters[id] = counter + 1
-		console.log(counters, newCounters);
-
+	const increment = (counter, id) => {
+		const newCounters = {...counters}
+		
+		newCounters[id] = counter < 10 ? counter + 1 : counter
 		setCounters(newCounters)
-		console.log(counters, newCounters);
-
-		// counter < 99 ? setCounters(counter + 1) : counter;
 	}
   
-  const decrement = () => counters > 1 ? setCounters(counters - 1) : counters;
+  const decrement = (counter, id) => {
+		const newCounters = {...counters}
+
+		newCounters[id] = counter > 1 ? counter - 1 : counter
+		setCounters(newCounters)
+	}
 
   return (
     <CountersContext.Provider value={{counters, setCounters, increment, decrement}}>

@@ -14,11 +14,62 @@ const CartProductsProvider = ({ children }) => {
   // useEffect(() => {
   //     setCartProducts(productsInCart)
   // }, []);
-  
-  const productToAdd = { id: 14, title: "Blondi Ale", price: 180, quantity:2 }
+    
   const cartAdd = (productToAdd) => {
-    const newCartProduct = [...cartProducts, productToAdd];
-    setCartProducts(newCartProduct);
+
+    // const productIsInCart = true
+    
+    const productIsInCart = cartProducts.find((e) => {
+      return e.id === productToAdd.id
+    });
+
+    if (productIsInCart) {
+      console.log("Actualizar: ", cartProducts);
+      const newCartProducts = [...cartProducts]
+      
+      const productToUpdate = newCartProducts.find((e) => {
+        return e.id === productToAdd.id
+      });
+      productToUpdate.quantity = productToUpdate.quantity + productToAdd.quantity
+      console.log(productToUpdate);
+      
+      
+      // newCartProducts[productToAdd]
+      setCartProducts(newCartProducts)
+    } else {
+      console.log("Agregar");
+      const newCartProducts = [...cartProducts, productToAdd];
+      setCartProducts(newCartProducts);
+    }
+
+    const newCartProducts = cartProducts.map(cartProduct => {
+      console.log(productToAdd);
+      console.log(cartProduct);
+      // console.log("Hola");
+
+      // const newCartProducts = [...cartProducts, productToAdd];
+      // setCartProducts(newCartProducts);
+    })
+
+    // const newCartProducts = cartProducts.map(cartProduct => {
+    //   console.log(cartProduct.id,productToAdd.id);
+    //   if (cartProduct.id == productToAdd.id) {
+    //     // console.log("verdadero");
+    //     const newCartProducts = [...cartProducts];
+    //     setCartProducts(newCartProducts);
+
+    //   }else{
+    //     // console.log("falso");
+    //     const newCartProducts = [...cartProducts, productToAdd]
+    //     setCartProducts(newCartProducts);
+    //   }
+    // })
+
+
+
+    // const newCartProducts = [...cartProducts, productToAdd];
+
+    // setCartProducts(newCartProducts);
   }
 
   const [counter, setCounter] = useState(1);
@@ -35,7 +86,7 @@ const CartProductsProvider = ({ children }) => {
   const decrement = () => counter > 1 ? setCounter(counter - 1) : counter;
 
   return (
-    <CartProductsContext.Provider value={{cartProducts, setCartProducts, counter, setCounter, increment, increment2, decrement, cartAdd, productToAdd}}>
+    <CartProductsContext.Provider value={{cartProducts, setCartProducts, counter, setCounter, increment, increment2, decrement, cartAdd}}>
       {children}
     </CartProductsContext.Provider>
   )

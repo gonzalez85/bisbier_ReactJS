@@ -2,24 +2,29 @@ import React, { useContext } from "react";
 import "./styles.css";
 import CartProductsContext from "../../context/cartProductsContext";
 import { Link } from "react-router-dom";
-import CountersContext from "../../context/counterContext";
+import CounterContext from "../../context/counterContext";
 
-function ProductCard({ product, detail}) {
+const ProductCard = ({ product, detail }) => {
+
   const { cartAdd } = useContext(CartProductsContext);
-  const { increment, decrement, counters } = useContext(CountersContext);
+  const { increment, decrement, counters } = useContext(CounterContext);
+	const imageUrl = `../images/${product.image}.jpg`
+  const imageAlt = product.title
+  const counter = "counter"+product.id
+  const productToAddQuantity = counters["counter"+product.id]
   
-  // setCounters(countersCategory)
+  product.quantity = productToAddQuantity
+  
+  // useEffect(() => {
+  //   		setCounters(countersProducts)
+  // }, []);
 
-  return(
+    return(
     <div className="productCard">
-      <img 
-        className="imgProductCard"
-        src={`../images/${product.image}.jpg`}
-        alt="Cerveza Blonde" />
+      <img className="imgProductCard" src={imageUrl} alt={imageAlt} />
       <div className="descProductCard">
         <h2 className="titleProduct">{product.title}</h2>
         <div className="descProduct">
-          
           {detail 
         ? (<p>{product.fullDescription}</p>) 
         : (<><p>{product.description} 
@@ -28,21 +33,18 @@ function ProductCard({ product, detail}) {
           </Link>
         </p></>)
         }
-
         </div>
-        
         <div className="buttonDiv">
           <span className="price">{product.price}</span>
-          
           <div className="formAdd">
           <div className="counter">
-            <button className="btnCount btnMinus" onClick={decrement}>-</button>
+            <button className="btnCount btnMinus" onClick={() => decrement(productToAddQuantity, counter)}>-</button>
             <span className="count">{
             // console.log(counters["counter"+0])}{
-            //   console.log(counters)}{
-            counters["counter"+product.id]
+              // console.log(counters)}{
+            productToAddQuantity
             }</span>
-            <button className="btnCount btnPlus" onClick={() => increment(counters["counter"+product.id], "counter"+product.id)}>+</button>
+            <button className="btnCount btnPlus" onClick={() => increment(productToAddQuantity, counter)}>+</button>
           </div>
           {/* <button href="#" className="btnForm" onClick={() => cartAdd(productToAdd)}>Agregar al carrito</button> */}
           <button href="#" className="btnForm" onClick={() => cartAdd(product)}>Agregar al carrito</button>
