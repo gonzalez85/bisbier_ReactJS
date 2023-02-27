@@ -5,7 +5,7 @@
     "category": "Cervezas",
     "description": "Una cerveza americana fácil de tomar, balanceada hacia la malta.",
     "fullDescription": "Una cerveza americana fácil de tomar, balanceada hacia la malta. Con 4.7% de alcohol y 18 IBU's de amargor.",
-    "price": "$ 150",
+    "price": 150,
     "image": "blonde",
     "quantity": 1,
     "stock": 20
@@ -16,7 +16,7 @@
     "category": "Cervezas",
     "description": "Una American Pale Ale decididamente amarga y lupulada, y moderadamente fuerte.",
     "fullDescription": "Una American Pale Ale decididamente amarga y lupulada, y moderadamente fuerte. Con 6.4% de alcohol y 55 IBU's de amargor.",
-    "price": "$ 150",
+    "price": 150,
     "image": "ipa",
     "quantity": 1,
     "stock": 20
@@ -27,7 +27,7 @@
     "category": "Cervezas",
     "description": "Una cerveza fácil de tomar, con un sabor dulce debido a las maltas crystal.",
     "fullDescription": "Una cerveza fácil de tomar, con un sabor dulce debido a las maltas crystal. Con 4.4% de alcohol y 25 IBU's de amargor.",
-    "price": "$ 150",
+    "price": 150,
     "image": "amber",
     "quantity": 1,
     "stock": 20
@@ -38,7 +38,7 @@
     "category": "Cervezas",
     "description": "Una cerveza fácil de tomar. Focalizada en la malta con un dulzor inicial y un acabado seco y torrado.",
     "fullDescription": "Una cerveza fácil de tomar. Focalizada en la malta con un dulzor inicial y un acabado seco y torrado. Con 5.0% de alcohol y 30 IBU's de amargor.",
-    "price": "$ 150",
+    "price": 150,
     "image": "irish",
     "quantity": 1,
     "stock": 20
@@ -49,7 +49,7 @@
     "category": "Cervezas",
     "description": "Una ale muy oscura, dulce, con un cuerpo pleno, ligeramente torrada. Con un suave toque a cacao.",
     "fullDescription": "Una ale muy oscura, dulce, con un cuerpo pleno, ligeramente torrada. Con un suave toque a cacao. Con 5.2% de alcohol y 28 IBU's de amargor.",
-    "price": "$ 150",
+    "price": 150,
     "image": "stout",
     "quantity": 1,
     "stock": 20
@@ -60,7 +60,7 @@
     "category": "Barriles",
     "description": "Una cerveza americana fácil de tomar, balanceada hacia la malta.",
     "fullDescription": "Una cerveza americana fácil de tomar, balanceada hacia la malta. Con 4.7% de alcohol y 18 IBU's de amargor.",
-    "price": "$ 2500",
+    "price": 2500,
     "image": "barril",
     "quantity": 1,
     "stock": 5
@@ -71,7 +71,7 @@
     "category": "Barriles",
     "description": "Una American Pale Ale decididamente amarga y lupulada, y moderadamente fuerte.",
     "fullDescription": "Una American Pale Ale decididamente amarga y lupulada, y moderadamente fuerte. Con 6.4% de alcohol y 55 IBU's de amargor.",
-    "price": "$ 3000",
+    "price": 3000,
     "image": "barril",
     "quantity": 1,
     "stock": 3
@@ -82,18 +82,18 @@
     "category": "Choperas",
     "description": "Hace que tu fiesta sea aún mas divertida.",
     "fullDescription": "Hace que tu fiesta sea aún mas divertida. Para que tu fiesta sea mejor aún, complementa con uno de nuestros barriles de cerveza!",
-    "price": "$ 1000",
+    "price": 1000,
     "image": "chopera",
     "quantity": 1,
     "stock": 2
   },
   {
     "id": 8,
-    "title": "chopera doble canilla",
+    "title": "Chopera doble canilla",
     "category": "Choperas",
     "description": "Hace que tu fiesta sea aún mas divertida.",
     "fullDescription": "Hace que tu fiesta sea aún mas divertida. Para que tu fiesta sea mejor aún, complementa con uno de nuestros barriles de cerveza!",
-    "price": "$ 1500",
+    "price": 1500,
     "image": "chopera",
     "quantity": 1,
     "stock": 2
@@ -104,7 +104,7 @@
     "category": "Otros",
     "description": "Sin descripción.",
     "fullDescription": "Sin descripción extendida.",
-    "price": "$ 300",
+    "price": 300,
     "image": "undefined",
     "quantity": 1,
     "stock": 0
@@ -115,7 +115,7 @@
     "category": "Otros",
     "description": "Sin descripción.",
     "fullDescription": "Sin descripción extendida.",
-    "price": "$ 350",
+    "price": 350,
     "image": "undefined",
     "quantity": 1,
     "stock": 30

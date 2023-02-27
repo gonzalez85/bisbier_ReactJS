@@ -4,89 +4,76 @@ const CartProductsContext = createContext();
 
 const CartProductsProvider = ({ children }) => {
 
-  const productsInCart = [
-    { id: 0, title: "Blonde Ale", price: 150, quantity:2 },
-    { id: 2, title: "Amber Ale", price: 150, quantity:1 },
-  ];
+  // const productsInCart = [
+  //   {
+  //     id: 0,
+  //     title: "Blonde Ale",
+  //     category: "Cervezas",
+  //     description: "Una cerveza americana fácil de tomar, balanceada hacia la malta.",
+  //     fullDescription: "Una cerveza americana fácil de tomar, balanceada hacia la malta. Con 4.7% de alcohol y 18 IBU's de amargor.",
+  //     price: 150,
+  //     image: "blonde",
+  //     quantity: 2,
+  //     stock: 20
+  //   },
+  //   {
+  //     id: 2,
+  //     title: "Amber Ale",
+  //     category: "Cervezas",
+  //     description: "Una cerveza fácil de tomar, con un sabor dulce debido a las maltas crystal.",
+  //     fullDescription: "Una cerveza fácil de tomar, con un sabor dulce debido a las maltas crystal. Con 4.4% de alcohol y 25 IBU's de amargor.",
+  //     price: 150,
+  //     image: "amber",
+  //     quantity: 1,
+  //     stock: 20
+  //   },
+  // ];
 
-  const [cartProducts, setCartProducts] = useState(productsInCart);
+  const [cartProducts, setCartProducts] = useState([]);
 
-  // useEffect(() => {
-  //     setCartProducts(productsInCart)
-  // }, []);
-    
   const cartAdd = (productToAdd) => {
-
-    // const productIsInCart = true
     
-    const productIsInCart = cartProducts.find((e) => {
-      return e.id === productToAdd.id
-    });
+    let newCartProducts = [...cartProducts]
 
-    if (productIsInCart) {
-      console.log("Actualizar: ", cartProducts);
-      const newCartProducts = [...cartProducts]
-      
-      const productToUpdate = newCartProducts.find((e) => {
-        return e.id === productToAdd.id
-      });
-      productToUpdate.quantity = productToUpdate.quantity + productToAdd.quantity
-      console.log(productToUpdate);
-      
-      
-      // newCartProducts[productToAdd]
-      setCartProducts(newCartProducts)
+    const productInCart = newCartProducts.find((productInCart) => productInCart.id === productToAdd.id)
+
+    if (productInCart) {
+      productInCart.quantity += productToAdd.quantity
     } else {
-      console.log("Agregar");
-      const newCartProducts = [...cartProducts, productToAdd];
-      setCartProducts(newCartProducts);
+      newCartProducts = [...cartProducts, productToAdd];
     }
-
-    const newCartProducts = cartProducts.map(cartProduct => {
-      console.log(productToAdd);
-      console.log(cartProduct);
-      // console.log("Hola");
-
-      // const newCartProducts = [...cartProducts, productToAdd];
-      // setCartProducts(newCartProducts);
-    })
-
-    // const newCartProducts = cartProducts.map(cartProduct => {
-    //   console.log(cartProduct.id,productToAdd.id);
-    //   if (cartProduct.id == productToAdd.id) {
-    //     // console.log("verdadero");
-    //     const newCartProducts = [...cartProducts];
-    //     setCartProducts(newCartProducts);
-
-    //   }else{
-    //     // console.log("falso");
-    //     const newCartProducts = [...cartProducts, productToAdd]
-    //     setCartProducts(newCartProducts);
-    //   }
-    // })
-
-
-
-    // const newCartProducts = [...cartProducts, productToAdd];
-
-    // setCartProducts(newCartProducts);
+    setCartProducts(newCartProducts)
   }
 
-  const [counter, setCounter] = useState(1);
+  const cartRemove = (productToRemove) => {
+    
+    let newCartProducts = [...cartProducts].filter(cartProduct => cartProduct.id !== productToRemove.id)
+    
+    setCartProducts(newCartProducts)
+  }
 
-  const increment = (counter) => counter < 99 ? setCounter(counter + 1) : counter;
+  const increment = (quantity, counter) => {
+    // const newCounters = {...counters}
+    console.log(quantity, counter);
+  }
   
-  const increment2 = (productQuantity) => {
+  const decrement = () => {
     
-    console.log(productQuantity);
-    console.log(productsInCart[0].quantity, productQuantity);
-    
-  };
+  }
 
-  const decrement = () => counter > 1 ? setCounter(counter - 1) : counter;
+  // const [counter, setCounter] = useState(1);
+
+  // const increment = (counter) => counter < 99 ? setCounter(counter + 1) : counter;
+  
+  // const increment2 = (productQuantity) => {
+    
+    
+  // };
+
+  // const decrement = () => counter > 1 ? setCounter(counter - 1) : counter;
 
   return (
-    <CartProductsContext.Provider value={{cartProducts, setCartProducts, counter, setCounter, increment, increment2, decrement, cartAdd}}>
+    <CartProductsContext.Provider value={{ cartProducts, setCartProducts, cartAdd, cartRemove, increment, decrement }}>
       {children}
     </CartProductsContext.Provider>
   )
