@@ -1,5 +1,8 @@
 import axios from "axios";
 import React, { useEffect, useState, createContext  } from "react";
+import { db } from "../firebase/firebaseConfig"
+import { collection, query, where, getDocs } from "firebase/firestore";
+
 
 const CountersContext = createContext();
 
@@ -8,13 +11,36 @@ const CountersProvider = ({children}) => {
 	const [counters, setCounters] = useState({});
   
 	useEffect(() => {
-    axios("../data/products.json").then((res) =>{
+		
+		const getCounters = async () => {
+	
+		  const q = query(collection(db, "productos"));
+		  const querySnapshot = await getDocs(q);
+		  const products = [];
 			let countersProducts = {}
-			res.data.map(product => countersProducts["counter"+product.id] = product.quantity)
-			// res.data.map(product => countersProducts["counterCart"+product.id] = 0)
-			setCounters(countersProducts)
-		});
-  }, []);
+
+			querySnapshot.forEach((doc) => {
+			
+				products.push({ id: doc.id, ...doc.data() });
+				// products.map(product => countersProducts["counterCart"+product.id] = 0)
+				// setCounters(products);
+
+		  });
+			products.map(product => countersProducts["counter"+product.id] = 1)
+			setCounters(countersProducts);
+			console.log(countersProducts);
+		};
+		getCounters()
+	  }, []);
+console.log(counters);
+// 	useEffect(() => {
+//     axios("../data/products.json").then((res) =>{
+// 			let countersProducts = {}
+// 			res.data.map(product => countersProducts["counter"+product.id] = product.quantity)
+// 			// res.data.map(product => countersProducts["counterCart"+product.id] = 0)
+// 			setCounters(countersProducts)
+// 		});
+//   }, []);
 
 	const increment = (counter, id) => {
 

@@ -17,7 +17,6 @@ const ProductCard = ({ product, detail }) => {
   
   product.quantity = productToAddQuantity
   
-  console.log(counters);
     return(
       <div className="productCard">
         <img className="imgProductCard" src={imageUrl} alt={imageAlt} />
