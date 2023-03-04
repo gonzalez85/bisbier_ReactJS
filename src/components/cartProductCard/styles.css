@@ -1,16 +1,21 @@
-.contCartProductCard {
-  width: 800px;
-  height: 240px;
+.CartProductCardContainer {
+  max-width: 720px;
+  max-height: 240px;
   margin: 10px 10px 50px;
-  padding: 10px;
   display: flex;
-  align-items: center;
   justify-content: center;
   background-color: #333;
-  box-shadow: 0 3px 13px 1px rgb(0 0 0 / 9%);
-  border-radius: 10px 0 0 10px;
-
+  box-shadow: 0 0 10px 6px rgba(85, 85, 85, 0.75);
+  border-radius: 0.5rem;
+  border: 2px solid #888;
 }
+.CartProductCardContainer:hover {
+  box-shadow: 0 0 10px 6px rgba(125, 125, 125, 0.75);
+  border-color: #ccc;
+  /* position: relative;
+  left: 5px;
+  top: 5px; */
+  }
 .imgCartProductCard {
   height: 100%;
   border-radius: 10px 0 0 10px;

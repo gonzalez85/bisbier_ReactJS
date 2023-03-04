@@ -1,7 +1,6 @@
-import axios from "axios";
 import React, { useEffect, useState, createContext  } from "react";
 import { db } from "../firebase/firebaseConfig"
-import { collection, query, where, getDocs } from "firebase/firestore";
+import { collection, query, getDocs } from "firebase/firestore";
 
 
 const CountersContext = createContext();
@@ -11,49 +10,41 @@ const CountersProvider = ({children}) => {
 	const [counters, setCounters] = useState({});
   
 	useEffect(() => {
-		
+
 		const getCounters = async () => {
-	
 		  const q = query(collection(db, "productos"));
 		  const querySnapshot = await getDocs(q);
 		  const products = [];
-			let countersProducts = {}
+		  let countersProducts = {}
+		//   let countersCart = {} // Contadores por separado
+		//   let newCounters = {} // Contadores por separado
 
 			querySnapshot.forEach((doc) => {
-			
 				products.push({ id: doc.id, ...doc.data() });
-				// products.map(product => countersProducts["counterCart"+product.id] = 0)
-				// setCounters(products);
-
 		  });
-			products.map(product => countersProducts["counter"+product.id] = 1)
+
+			products.map(product => ([countersProducts["counter"+product.id] = 1, countersProducts["counterCart"+product.id] = 0] ))
+			// products.map(product2 => ([countersProducts[product2.id] = 1, countersCart[product2.id] = 0])) // Contadores por separado
+			// newCounters = {"Products" : countersProducts, "Cart" : countersCart} // Contadores por separado
+
+			// console.log(countersCart); // Contadores por separado
+			// console.log(countersProducts); // Contadores por separado
+			// console.log(newCounters); // Contadores por separado
+			
 			setCounters(countersProducts);
-			console.log(countersProducts);
 		};
 		getCounters()
 	  }, []);
-console.log(counters);
-// 	useEffect(() => {
-//     axios("../data/products.json").then((res) =>{
-// 			let countersProducts = {}
-// 			res.data.map(product => countersProducts["counter"+product.id] = product.quantity)
-// 			// res.data.map(product => countersProducts["counterCart"+product.id] = 0)
-// 			setCounters(countersProducts)
-// 		});
-//   }, []);
 
-	const increment = (counter, id) => {
-
+	const increment = (counter, counterId, stock) => {
 		const newCounters = {...counters}
-		
-		newCounters[id] = counter < 10 ? counter + 1 : counter
+		newCounters[counterId] = counter < stock ? counter + 1 : counter
 		setCounters(newCounters)
 	}
   
-  const decrement = (counter, id) => {
+  const decrement = (counter, counterId) => {
 		const newCounters = {...counters}
-
-		newCounters[id] = counter > 1 ? counter - 1 : counter
+		newCounters[counterId] = counter > 1 ? counter - 1 : counter
 		setCounters(newCounters)
 	}
 

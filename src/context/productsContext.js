@@ -1,6 +1,6 @@
 import { useEffect, useState, createContext } from 'react';
 import { db } from "../firebase/firebaseConfig"
-import { collection, query, where, getDocs } from "firebase/firestore";
+import { collection, query, getDocs } from "firebase/firestore";
 
 const ProductsContext = createContext();
 
