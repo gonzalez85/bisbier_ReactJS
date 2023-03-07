@@ -12,6 +12,7 @@ const CartProductsProvider = ({ children }) => {
     const productInCart = newCartProducts.find((productInCart) => productInCart.id === productToAdd.id)
 
     if (productInCart) {
+
     } else {
       newCartProducts = [...cartProducts, productToAdd];
       setCartProducts(newCartProducts)

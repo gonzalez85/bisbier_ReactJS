@@ -13,12 +13,18 @@ const ProductCard = ({ product, detail }) => {
   const imageAlt = product.title
   
   const counterId = "counter"+product.id
-  const counterCart = "counterCart"+product.id
-  const productToAddQuantity = counters[counterId]
-
   const newCounters = {...counters}
+  
+  const counterCartId = "counterCart"+product.id
+  const cartCounter = counters[counterCartId]
+  const disponibility = product.stock - cartCounter
+  const productToAddQuantity = counters[counterId]>=disponibility ? disponibility : counters[counterId]
+
+  
+  newCounters[counterCartId] += productToAddQuantity
+
+  // cartCounter + productToAddQuantity < product.stock ? newCounters[counterCartId] += productToAddQuantity : console.log("No");
 	
-  newCounters[counterCart] += productToAddQuantity
 		
   // product.quantity = productToAddQuantity
   
@@ -43,10 +49,10 @@ const ProductCard = ({ product, detail }) => {
             <span className="count">
               {productToAddQuantity}
             </span>
-            <button className="btnCount btnPlus" onClick={() => increment(productToAddQuantity, counterId, product.stock)}>+</button>
+            <button className="btnCount btnPlus" onClick={() => increment(productToAddQuantity, counterId, disponibility)}>+</button>
           </div>
           <button href="#" className="btnForm" onClick={() => {
-            cartAdd({...product});
+            productToAddQuantity>0 ? cartAdd({...product}) : console.log("Producto sin Stock");
             setCounters(newCounters);
           }}>Agregar al carrito</button>
         </div>
