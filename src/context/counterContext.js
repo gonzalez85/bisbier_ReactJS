@@ -12,25 +12,32 @@ const CountersProvider = ({children}) => {
 	useEffect(() => {
 
 		const getCounters = async () => {
+
 		  const q = query(collection(db, "productos"));
 		  const querySnapshot = await getDocs(q);
 		  const products = [];
 		  let countersProducts = {}
-		//   let countersCart = {} // Contadores por separado
-		//   let newCounters = {} // Contadores por separado
 
+			//Contadores en 1 solo Array
 			querySnapshot.forEach((doc) => {
 				products.push({ id: doc.id, ...doc.data() });
-		  });
-
+			});
 			products.map(product => ([countersProducts["counter"+product.id] = 1, countersProducts["counterCart"+product.id] = 0] ))
+			//Contadores por separado
+
+		  // let countersCart = {} // Contadores por separado
+		  // let newCounters = {} // Contadores por separado
+
+			// querySnapshot.forEach((doc) => {
+			// 	products.push({ id: doc.id, ...doc.data() });
+			// });
+
 			// products.map(product2 => ([countersProducts[product2.id] = 1, countersCart[product2.id] = 0])) // Contadores por separado
 			// newCounters = {"Products" : countersProducts, "Cart" : countersCart} // Contadores por separado
 
 			// console.log(countersCart); // Contadores por separado
 			// console.log(countersProducts); // Contadores por separado
 			// console.log(newCounters); // Contadores por separado
-			
 			setCounters(countersProducts);
 		};
 		getCounters()

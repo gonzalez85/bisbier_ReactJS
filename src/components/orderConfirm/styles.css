@@ -1,0 +1,10 @@
+.orderId {
+    color: #f00;
+}
+.orderIdMessage {
+    background-color: #222;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 5px;
+    margin-bottom: 15px;
+}

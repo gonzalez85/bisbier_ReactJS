@@ -3,7 +3,7 @@ import "./styles.css";
 import CartProductsContext from "../../context/cartProductsContext";
 import CountersContext from "../../context/counterContext";
 
-const CartProductCard = ({ product, detail }) => {
+const CartProductCard = ({ product, isConfirmed }) => {
 
   const { cartRemove  } = useContext(CartProductsContext);
   const { counters, setCounters, increment, decrement } = useContext(CountersContext);
@@ -16,28 +16,19 @@ const CartProductCard = ({ product, detail }) => {
   newCounters[counterId] = 0
 
   return(
-    <div className="CartProductCardContainer">
-      <img className="imgProductCard" src={`../images/${product.image}.jpg`} alt={product.title} />
-      <div className="descProductCard">
-        <h2 className="titleProduct">{product.title}</h2>
-        <div className="descProduct">
-          {detail ? (<p>{product.fullDescription}</p>) : (<p>{product.description}</p>)}
-        </div>
-        <div className="buttonDiv">
-          <span className="price">{product.price}</span>
-          <div className="formAdd">
-            <div className="counter">
+    <div className="cartProductCardContainer">
+      <img className="imgCartProductCard" src={`../images/${product.image}.jpg`} alt={product.title} />
+        <h2 className="titleCartProduct">{product.title}</h2>
+            {isConfirmed ? <span className="count">x {counter}</span> : <div className="counterCart">
               <button className="btnCount btnMinus" onClick={() => decrement(counter, counterId)}>-</button>
               <span className="count">{counter}</span>
               <button className="btnCount btnPlus" onClick={() => increment(counter, counterId, product.stock)}>+</button>
-            </div>
-            <button href="#" className="btnForm" onClick={() => {
+            </div>}
+          <span className="priceCart">$ {product.price*counter}</span>
+            <button href="#" className="btnCartForm" onClick={() => {
               cartRemove({...product});
               setCounters(newCounters);
             }}>Quitar</button>
-          </div>
-        </div>
-      </div>
     </div>
   );
 };

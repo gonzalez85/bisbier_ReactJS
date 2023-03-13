@@ -14,6 +14,7 @@ import CartWidget from './components/cartWidget';
 import Home from './pages/Home';
 import Category from './pages/Category';
 import ProductDetail from './pages/ProductDetail';
+import Error from './pages/Error';
 
 //Context
 import { ProductsProvider } from './context/productsContext';
@@ -23,33 +24,34 @@ import { CountersProvider } from './context/counterContext';
 
 function App() {
   return (
-    <ProductsProvider>
-      <CartProductsProvider>
-        <CountersProvider>
-          <Router>
-            <div className="App">
-                <header>
-                  <nav>
-                    <Link to="/">
-                      <img src={logo} className="logo" alt="logo" />
-                    </Link>
-                      <NavBar />
-                      <CartWidget />
-                  </nav>
-                  <img src={banner} className="banner" alt="Imagen de portada" />
-                </header>
-              
-                <Routes>
-                  <Route path="/" element={<Home />} />
-                  <Route path="/category/:id" element={<Category />} />
-                  <Route path="/product/:id" element={<ProductDetail />} />
-                  <Route path="/cart" element={<CartProducts />} />
-                </Routes>
-            </div>
-          </Router>
-        </CountersProvider>
-      </CartProductsProvider>
-    </ProductsProvider>
+    <Router>
+      <ProductsProvider>
+        <CartProductsProvider>
+          <CountersProvider>
+              <div className="App">
+                  <header>
+                    <nav>
+                      <Link to="/">
+                        <img src={logo} className="logo" alt="logo" />
+                      </Link>
+                        <NavBar />
+                        <CartWidget />
+                    </nav>
+                    <img src={banner} className="banner" alt="Imagen de portada" />
+                  </header>
+                
+                  <Routes>
+                    <Route path="/" element={<Home />} />
+                    <Route path="/category/:id" element={<Category />} />
+                    <Route path="/product/:id" element={<ProductDetail />} />
+                    <Route path="/cart" element={<CartProducts />} />
+                    <Route path="*" element={<Error />} />
+                  </Routes>
+              </div>
+          </CountersProvider>
+        </CartProductsProvider>
+      </ProductsProvider>
+    </Router>
   );
 };
 

@@ -85,7 +85,7 @@
   /* margin: 1rem;  */
   display: flex;
   align-items: center;
-  background-color: #111;
+  /* background-color: #111; */
   border: 2px solid #888;
   border-radius: 0.25rem;
   /* padding: 0.5rem; */
@@ -119,4 +119,5 @@
   margin: 0rem 0.5rem;
   font-size: 1.25rem;
   font-weight: bold;
+  align-self: center;
 }
