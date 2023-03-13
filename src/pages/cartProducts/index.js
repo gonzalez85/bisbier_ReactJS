@@ -12,7 +12,7 @@ import OrderConfirm from "../../components/orderConfirm";
 const CartProducts = () => {
   
   const { cartProducts, setCartProducts } = useContext(CartProductsContext)
-  const { counters } = useContext(CounterContext)
+  const { counters, setCounters } = useContext(CounterContext)
   const [loading, setLoading] = useState(false);
   const [orderId, setOrderId] = useState("");
   const totalPrice = cartProducts.map(product => +product.price*counters["counterCart"+product.id]).reduce((a, b) => a + b, 0);
@@ -20,8 +20,9 @@ const CartProducts = () => {
   
   const order = { "products": [...cartProducts],"totalPrice": totalPrice, "totalQty": totalQty }
   const [orderConfirmed, setOrderConfirmed] = useState(order);
-
- 
+  // const counterId = "counterCart"+product.id
+  
+  // newCounters[counterId] = 0
 
   useEffect(() => {
     setLoading(true);
