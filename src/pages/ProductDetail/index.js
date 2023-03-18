@@ -1,6 +1,5 @@
 import { useParams } from "react-router";
 import React, { useContext, useEffect, useState } from "react";
-import ArticleContainer from "../../components/articleContainer";
 import ProductCard from "../../components/productCard";
 import ProductsContext from "../../context/productsContext";
 import { CircularProgress } from "@mui/material";
@@ -22,14 +21,14 @@ const ProductDetail = () => {
   }, [id]);
   
   return (
-    <ArticleContainer>
+    <article>
       <h1>Detalle del produto</h1>
       {loading ? (
         <div className="Spinner">
           <CircularProgress color="inherit" />
         </div>
       ) : product ? <ProductCard product={product} detail={detail} /> : <Error />}
-    </ArticleContainer>
+    </article>
   );
 };
 

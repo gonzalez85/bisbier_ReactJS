@@ -50,7 +50,20 @@ header {
 main {
   width: 100%;
 }
-
+article {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  margin: 5px;
+  padding: 10px 15px 15px 15px;
+  border-radius: 15px;
+  background-color: rgba(17, 17, 17, 0.7333333333);
+  font-size: 24px;
+  text-align: -webkit-center;
+}
 nav {
   display: flex;
   width: 100%;

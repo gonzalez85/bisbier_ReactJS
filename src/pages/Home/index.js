@@ -1,5 +1,4 @@
 import React, { useContext, useEffect, useState } from "react";
-import ArticleContainer from "../../components/articleContainer";
 import ProductCard from "../../components/productCard";
 import "./styles.css";
 import ProductContext from "../../context/productsContext";
@@ -21,7 +20,7 @@ const Home = () => {
   }, []);
 
   return (
-    <ArticleContainer>
+    <article>
       <h1>Bienvenidos a la tienda de Bisbier!</h1>
       {loading ? (
         <div className="Spinner">
@@ -36,7 +35,7 @@ const Home = () => {
             countersProducts={counters}/>
         );
       })}
-    </ArticleContainer>
+    </article>
   );
 };
 

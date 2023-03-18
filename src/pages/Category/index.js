@@ -1,6 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router";
-import ArticleContainer from "../../components/articleContainer";
 import ProductCard from "../../components/productCard";
 import ProductContext from "../../context/productsContext";
 import { CircularProgress } from "@mui/material";
@@ -23,7 +22,7 @@ const Category = () => {
 
   return (
     
-    <ArticleContainer>
+    <article>
       <h1>Usted está en la categoría: <span className="categoryId">{id}</span></h1>
       
       {loading ? (
@@ -35,7 +34,7 @@ const Category = () => {
           <ProductCard key={product.id} product={product ? product : ""} countersProducts={countersCategory} /> 
         )
       })}
-    </ArticleContainer>
+    </article>
   )
 };
 
