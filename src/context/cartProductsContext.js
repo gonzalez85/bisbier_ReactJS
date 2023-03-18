@@ -5,14 +5,11 @@ const CartProductsContext = createContext();
 const CartProductsProvider = ({ children }) => {
   
   const [cartProducts, setCartProducts] = useState([]);
-
+  
   const cartAdd = (productToAdd) => {
-
     let newCartProducts = [...cartProducts]
     const productInCart = newCartProducts.find((productInCart) => productInCart.id === productToAdd.id)
-
     if (productInCart) {
-
     } else {
       newCartProducts = [...cartProducts, productToAdd];
       setCartProducts(newCartProducts)
@@ -20,9 +17,8 @@ const CartProductsProvider = ({ children }) => {
   }
 
   const cartRemove = (productToRemove) => {
-    
     let newCartProducts = [...cartProducts].filter(cartProduct => cartProduct.id !== productToRemove.id)
-    
+
     setCartProducts(newCartProducts)
   }
 

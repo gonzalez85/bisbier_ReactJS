@@ -1,8 +1,11 @@
 import React, { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router";
-import ProductCard from "../../components/productCard";
-import ProductContext from "../../context/productsContext";
+
 import { CircularProgress } from "@mui/material";
+
+import ProductContext from "../../context/productsContext";
+
+import ProductCard from "../../components/productCard";
 
 const Category = () => {
   
@@ -10,8 +13,9 @@ const Category = () => {
   const { products } = useContext(ProductContext);
   const [loading, setLoading] = useState(false);
   let category = products.filter(data => data.category.toLowerCase()===id);
-  let countersCategory = {}
-  category.map(e => countersCategory["counter"+e.id] = e.quantity)
+  let countersCategory = {};
+  
+  category.map(e => countersCategory["counter"+e.id] = e.quantity);
 
   useEffect(() => {
     setLoading(true);
@@ -21,20 +25,20 @@ const Category = () => {
   }, [id]);
 
   return (
-    
-    <article>
+    <>
       <h1>Usted está en la categoría: <span className="categoryId">{id}</span></h1>
-      
-      {loading ? (
-        <div className="Spinner">
-          <CircularProgress color="inherit" />
-        </div>
-      ) : category.map(product => {
+      {loading ? <CircularProgress color="inherit" /> 
+      : 
+      category.map(product => {
         return (
-          <ProductCard key={product.id} product={product ? product : ""} countersProducts={countersCategory} /> 
+          <ProductCard 
+            key={product.id} 
+            product={product ? product : ""} 
+            countersProducts={countersCategory} 
+          /> 
         )
       })}
-    </article>
+    </>
   )
 };
 

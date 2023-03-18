@@ -34,18 +34,20 @@ function App() {
                   <Link to="/">
                     <img src={logo} className="logo" alt="logo" />
                   </Link>
-                    <NavBar />
-                    <CartWidget />
+                  <NavBar />
+                  <CartWidget />
                 </nav>
                 <img src={banner} className="banner" alt="Imagen de portada" />
               </header>
-              <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/category/:id" element={<Category />} />
-                <Route path="/product/:id" element={<ProductDetail />} />
-                <Route path="/cart" element={<CartProducts />} />
-                <Route path="*" element={<Error />} />
-              </Routes>
+              <article>
+                <Routes>
+                  <Route path="/" element={<Home />} />
+                  <Route path="/category/:id" element={<Category />} />
+                  <Route path="/product/:id" element={<ProductDetail />} />
+                  <Route path="/cart" element={<CartProducts />} />
+                  <Route path="*" element={<Error />} />
+                </Routes>
+              </article>
             </div>
           </CountersProvider>
         </CartProductsProvider>

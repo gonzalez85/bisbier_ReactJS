@@ -6,17 +6,8 @@
   display: flex;
   justify-content: center;
   background-color: #444;
-  /* box-shadow: 0 0 10px 6px rgba(85, 85, 85, 0.75); */
   border-radius: 0.5rem;
-  /* border: 2px solid #888; */
 }
-/* .CartProductCardContainer:hover {
-  box-shadow: 0 0 10px 6px rgba(125, 125, 125, 0.75);
-  border-color: #ccc;
-  /* position: relative;
-  left: 5px;
-  top: 5px; 
-  } */
 .imgCartProductCard {
   /* flex: 0; */
   align-self: center;
@@ -27,27 +18,20 @@
 }
 .descCartProductCard {
   text-align: right;
-  /* width: 67%; */
-  /* height: 240px; */
-  /* padding: 40px; */
   font-weight: 400;
   line-height: 1.5rem;
   display: flex;
-  /* flex-direction: column; */
   justify-content: space-between;
 }
 .titleCartProduct {
   flex: 2.1;
   text-shadow: 1px 1px 3px rgb(17 17 17 / 73%);
   text-align: left;
-  /* background-color: #555; */
   padding: 1rem;
   font-size: 2rem;
   font-weight: bold;
   font-family: 'Clicker Script';
   border-radius: 0 10px 0 0;
-  /* box-shadow: 0px 5px 10px -2px rgba(0, 205, 219, 0.75); */
-  
 }
 .contCartDescProductCard {
   text-align: right;
@@ -56,7 +40,6 @@
   font-weight: 400;
   line-height: 1.5rem;
 }
-
 .descCartProduct {
   font-size: 1.3rem;
   margin-top: 15px;
@@ -74,25 +57,23 @@
   color: #fff;
   text-decoration: none;
   cursor:pointer;
-  }
+}
 .btnCartForm:active {
   background-color: #444;
   border-color: #ccc;
-  }
+}
 .btnCartForm:hover {
   background-color: #444;
   border-color: #ccc;
-  }
+}
 .priceCart {
   flex: 1;
   margin: 0rem 1rem 0rem 0rem;
   align-self: center;
-  /* background-color: #555; */
   color: #bbb;
   font-weight: bold;
   padding:0.5rem;
   text-shadow: 1px 1px 3px rgb(17 17 17 / 73%);
-  /* box-shadow: 5px 0 7px 3px rgba(155, 155, 155, 0.75); */
 }
 .counterCart {
   flex: 0;
@@ -101,20 +82,8 @@
   margin: 1rem; 
   display: flex;
   align-items: center;
-  /* background-color: #111; */
   border: 2px solid #888;
   border-radius: 0.25rem;
-  /* padding: 0.5rem; */
-}
-.cartProductsResume {
-  width: 90%;
-  max-width: 720px;
-  max-height: 240px;
-  margin: 10px 10px 50px;
-  display: flex;
-  align-items: center;
-  border-top: 2px dashed #888;
-  justify-content: flex-end;
 }
 .cartProductsTotal {
   font-weight: bolder;

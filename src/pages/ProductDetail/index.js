@@ -1,8 +1,10 @@
 import { useParams } from "react-router";
 import React, { useContext, useEffect, useState } from "react";
-import ProductCard from "../../components/productCard";
-import ProductsContext from "../../context/productsContext";
 import { CircularProgress } from "@mui/material";
+
+import ProductsContext from "../../context/productsContext";
+
+import ProductCard from "../../components/productCard";
 import Error from "../Error";
 
 const ProductDetail = () => {
@@ -21,14 +23,14 @@ const ProductDetail = () => {
   }, [id]);
   
   return (
-    <article>
+    <>
       <h1>Detalle del produto</h1>
-      {loading ? (
-        <div className="Spinner">
-          <CircularProgress color="inherit" />
-        </div>
-      ) : product ? <ProductCard product={product} detail={detail} /> : <Error />}
-    </article>
+      {loading ? <CircularProgress color="inherit" /> 
+      :
+      product ? <ProductCard product={product} detail={detail} /> 
+      : 
+      <Error />}
+    </>
   );
 };
 

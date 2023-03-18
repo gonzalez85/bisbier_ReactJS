@@ -6,6 +6,19 @@
     flex-direction: column;
     align-items: center;
 }
+.cartProductsResume {
+  width: 90%;
+  max-width: 720px;
+  max-height: 240px;
+  margin: 10px 10px 50px;
+  display: flex;
+  align-items: center;
+  border-top: 2px dashed #888;
+  justify-content: flex-end;
+}
+.cartProductsTotalPrice {
+  font-weight: bolder;
+}
 .btnBuy {
   float: right;
   background-color: #111;

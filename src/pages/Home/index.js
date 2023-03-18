@@ -1,8 +1,10 @@
 import React, { useContext, useEffect, useState } from "react";
-import ProductCard from "../../components/productCard";
-import "./styles.css";
-import ProductContext from "../../context/productsContext";
 import { CircularProgress } from "@mui/material";
+import "./styles.css";
+
+import ProductContext from "../../context/productsContext";
+
+import ProductCard from "../../components/productCard";
 
 const Home = () => {
 
@@ -10,6 +12,7 @@ const Home = () => {
   const [loading, setLoading] = useState(false);
   const detail=false;
   let counters = {}
+
   products.map(e => counters["counter"+e.id] = e.quantity)
 
   useEffect(() => {
@@ -20,22 +23,19 @@ const Home = () => {
   }, []);
 
   return (
-    <article>
+    <>
       <h1>Bienvenidos a la tienda de Bisbier!</h1>
-      {loading ? (
-        <div className="Spinner">
-          <CircularProgress color="inherit" />
-        </div>
-      ) : products.map(product => {
-        return (
-          <ProductCard 
-            key={product.id}
-            product={product}
-            detail={detail}
-            countersProducts={counters}/>
-        );
-      })}
-    </article>
+      {loading ? <CircularProgress color="inherit" /> 
+      : 
+      products.map(product => 
+        <ProductCard 
+        key={product.id} 
+        product={product} 
+        detail={detail} 
+        countersProducts={counters}
+        />
+      )}
+    </>
   );
 };
 

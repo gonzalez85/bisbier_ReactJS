@@ -1,4 +1,5 @@
 import { useEffect, useState, createContext } from 'react';
+
 import { db } from "../firebase/firebaseConfig"
 import { collection, query, getDocs } from "firebase/firestore";
 
@@ -10,7 +11,6 @@ const ProductsProvider = ({children}) => {
   
   useEffect(() => {
     const getProducts = async () => {
-
       const q = query(collection(db, "productos"));
       const querySnapshot = await getDocs(q);
       const docs = [];
@@ -19,7 +19,6 @@ const ProductsProvider = ({children}) => {
         docs.push({ ...doc.data(), id: doc.id });
         setProducts(docs);
       });
-
     };
     getProducts();
   }, []);

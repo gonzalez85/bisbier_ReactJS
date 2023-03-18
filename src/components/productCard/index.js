@@ -31,7 +31,7 @@ const ProductCard = ({ product, detail }) => {
           )}
         </div>
         <div className="buttonDiv">
-          <span className="price">{product.price}</span>
+          <span className="price">$ {product.price}</span>
           <div className="formAdd">
           <div className="counter">
             <button className="btnCount btnMinus" onClick={() => decrement(productToAddQuantity, counterId)}>-</button>
