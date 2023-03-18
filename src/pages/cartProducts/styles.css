@@ -26,4 +26,30 @@
     background-color: #444;
     border-color: #ccc;
     }
-  
+legend {
+  font-size: 36px;
+  color: #fff;
+  text-align: center;
+  font-family: "Clicker Script", cursive;
+}
+input {
+  background-color: #333;
+  border-width: 0 0 2px 0;
+  padding: 0 5px 0 5px;
+  color: #fff;
+  margin: 0 10px 10px 0;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+fieldset {
+  text-align: left;
+    max-width: 524px;
+    
+}
+
+.contact_form {
+  max-width: 640px;
+  padding: 15px;
+  margin-bottom: 15px;
+}
