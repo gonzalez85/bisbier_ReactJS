@@ -11,7 +11,7 @@ import OrderConfirm from "../../components/orderConfirm";
 import CartProductsContext from "../../context/cartProductsContext";
 import CounterContext from "../../context/counterContext";
 
-const initialState = {
+const emptyOwnerInfo = {
   name: "",
   email: "",
 };
@@ -23,17 +23,17 @@ const CartProducts = () => {
 
   const [loading, setLoading] = useState(false);
   const [orderId, setOrderId] = useState("");
-  const [values, setValues] = useState(initialState);
+  const [ownerInfo, setOwnerInfo] = useState(emptyOwnerInfo);
   
   const totalPrice = cartProducts.map(product => +product.price*counters["counterCart"+product.id]).reduce((a, b) => a + b, 0);
   const totalQty = cartProducts.map(product => +counters["counterCart"+product.id]).reduce((a, b) => a + b, 0);
   
   const handleOnChange = (e) => {
     const { value, name } = e.target;
-    setValues({ ...values, [name]: value });
+    setOwnerInfo({ ...ownerInfo, [name]: value });
   };
 
-  const order = { "owner": values, "products": cartProducts, "totalPrice": totalPrice, "totalQty": totalQty }
+  const order = { "owner": ownerInfo, "products": cartProducts, "totalPrice": totalPrice, "totalQty": totalQty }
   const [orderConfirmed, setOrderConfirmed] = useState(order);
 
   useEffect(() => {
@@ -70,21 +70,24 @@ const CartProducts = () => {
         <>
           <form className="contact_form">
             <legend>Datos del comprador</legend>
-            <input id="name" type="text" placeholder="Nombre" name="name" value={values.name} onChange={handleOnChange} />
-            <input id="email" type="email" placeholder="E-mail" name="email" value={values.email}  onChange={handleOnChange} />
+            <input id="name" type="text" placeholder="Nombre" name="name" value={ownerInfo.name} onChange={handleOnChange} />
+            <input id="email" type="email" placeholder="E-mail" name="email" value={ownerInfo.email}  onChange={handleOnChange} />
           </form>
           {cartProducts.map(product => 
             <CartProductCard key={product.id} product={product} />) }
           <div className="cartProductsResume">
             <span className="cartProductsTotalPrice">Total: ${totalPrice}</span>
-            <button href="#" className="btnBuy" onClick={() => {buyAction();setCartProducts([])}}>
+            {ownerInfo.name && ownerInfo.email != "" ? <button href="#" className={ownerInfo.name && ownerInfo.email != "" ? "btnBuy" : "btnBuyDisabled"} onClick={() => {buyAction();setCartProducts([])}}>
               Finalizar Compra
-            </button> 
+            </button> : <button href="#" className="btnBuyDisabled">
+              Finalizar Compra
+            </button> }
+           
           </div>
         </>
           : 
 
-            orderId ? <OrderConfirm orderId={orderId} owner={values} products={orderConfirmed.products} totalPrice={orderConfirmed.totalPrice} /> 
+            orderId ? <OrderConfirm orderId={orderId} owner={ownerInfo} products={orderConfirmed.products} totalPrice={orderConfirmed.totalPrice} /> 
               : 
               "Tu carrito se encuentra vacío"}
 

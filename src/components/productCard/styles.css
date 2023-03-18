@@ -121,3 +121,10 @@
   font-weight: bold;
   align-self: center;
 }
+.productDetailLink {
+  font-style: italic;
+  font-size: initial;
+  float: right;
+  color: #fff;
+  text-decoration: none;
+}

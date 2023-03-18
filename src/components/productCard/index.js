@@ -25,7 +25,7 @@ const ProductCard = ({ product, detail }) => {
         <div className="descProduct">
           {detail ? (<p>{product.fullDescription}</p>) : (
             <><p>{product.description}</p>
-            <Link className="clearLink" key={product.id} to={`/product/${product.id}`}>
+            <Link className="productDetailLink" key={product.id} to={`/product/${product.id}`}>
               Ver mas detalles...
             </Link></>
           )}

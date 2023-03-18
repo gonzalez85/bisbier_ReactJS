@@ -7,25 +7,37 @@
     align-items: center;
 }
 .btnBuy {
-    float: right;
-    background-color: #111;
-    border: 2px solid #888;
-    padding: 0.5rem 0.75rem;
-    margin: 0.5rem;
-    border-radius: 0.25rem;
-    font-size: 1rem;
-    color: #fff;
-    text-decoration: none;
-    cursor:pointer;
-    }
-  .btnBuy:active {
-    background-color: #444;
-    border-color: #ccc;
-    }
-  .btnBuy:hover {
-    background-color: #444;
-    border-color: #ccc;
-    }
+  float: right;
+  background-color: #111;
+  border: 2px solid #888;
+  padding: 0.5rem 0.75rem;
+  margin: 0.5rem;
+  border-radius: 0.25rem;
+  font-size: 1rem;
+  color: #fff;
+  text-decoration: none;
+  cursor:pointer;
+  }
+.btnBuy:active {
+  background-color: #444;
+  border-color: #ccc;
+}
+.btnBuy:hover {
+  background-color: #444;
+  border-color: #ccc;
+}
+.btnBuyDisabled {
+  float: right;
+  background-color: #333;
+  border: 2px solid #888;
+  padding: 0.5rem 0.75rem;
+  margin: 0.5rem;
+  border-radius: 0.25rem;
+  font-size: 1rem;
+  color: #fff;
+  text-decoration: none;
+}
+    
 legend {
   font-size: 36px;
   color: #fff;
