@@ -25,10 +25,10 @@ const CartProductCard = ({ product, isConfirmed }) => {
               <button className="btnCount btnPlus" onClick={() => increment(counter, counterId, product.stock)}>+</button>
             </div>}
           <span className="priceCart">$ {product.price*counter}</span>
-            <button href="#" className="btnCartForm" onClick={() => {
+            {isConfirmed ? null : <button href="#" className="btnCartForm" onClick={() => {
               cartRemove({...product});
               setCounters(newCounters);
-            }}>Quitar</button>
+            }}>Quitar</button>}
     </div>
   );
 };
