@@ -40,7 +40,7 @@ const ProductCard = ({ product, detail }) => {
             </span>
             <button className="btnCount btnPlus" onClick={() => increment(productToAddQuantity, counterId, availability)}>+</button>
           </div>
-          <button href="#" className="btnForm" onClick={() => {
+          <button className="btnForm" onClick={() => {
             productToAddQuantity>0 ? cartAdd({...product}) : console.log("Producto sin Stock");
             setCounters(newCounters);
           }}>Agregar al carrito</button>

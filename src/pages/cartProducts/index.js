@@ -30,12 +30,17 @@ const CartProducts = () => {
   const totalPrice = cartProducts.map(product => +product.price*counters["counterCart"+product.id]).reduce((a, b) => a + b, 0);
   const totalQty = cartProducts.map(product => +counters["counterCart"+product.id]).reduce((a, b) => a + b, 0);
   
+  const orderProducts = cartProducts.map(product => {
+    const { description, fullDescription, stock, ...resto } = product;
+    return { ...resto, quantity: counters["counterCart"+product.id] }
+  });
+
   const handleOnChange = (e) => {
     const { value, name } = e.target;
     setOwnerInfo({ ...ownerInfo, [name]: value });
   };
 
-  const order = { "owner": ownerInfo, "products": cartProducts, "totalPrice": totalPrice, "totalQty": totalQty }
+  const order = { "owner": ownerInfo, "products": orderProducts, "totalPrice": totalPrice, "totalQty": totalQty }
   const [orderConfirmed, setOrderConfirmed] = useState(order);
 
   useEffect(() => {
@@ -90,23 +95,13 @@ const CartProducts = () => {
             )}
             <div className="cartProductsResume">
               <span className="cartProductsTotalPrice">Total: ${totalPrice}</span>
-              {ownerInfo.name && ownerInfo.email !== "" 
+              {ownerInfo.name && ownerInfo.email 
               ? 
-              <button 
-                href="#" 
-                className={
-                  ownerInfo.name && ownerInfo.email !== "" 
-                  ? 
-                  "btnBuy" 
-                  : 
-                  "btnBuyDisabled"
-                } 
-                onClick={() => {buyAction();setCartProducts([])}}
-              >
+              <button className="btnBuy" onClick={() => {buyAction();setCartProducts([])}}>
                 Finalizar Compra
               </button>
               : 
-              <button href="#" className="btnBuyDisabled">
+              <button className="btnBuyDisabled">
                 Finalizar Compra
               </button> }
             </div>
