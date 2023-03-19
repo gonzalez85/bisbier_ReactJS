@@ -116,6 +116,7 @@
   color: #040;
   }
 .count {
+  text-shadow: 1px 1px 3px rgb(17 17 17 / 73%);
   margin: 0rem 0.5rem;
   font-size: 1.25rem;
   font-weight: bold;

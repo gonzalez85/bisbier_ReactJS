@@ -4,12 +4,11 @@ import "./styles.css"
 
 
 const OrderConfirm = ({ orderId, owner, products, totalPrice }) => {
-console.log(owner);
 	return (
 		<>
 			<div className="orderIdMessage">
-			<p>Felicidades <strong>{owner.name}</strong>!</p>
-			<p>La transacción <span className="orderId">{orderId}</span> se ha procesado correctamente.</p>
+				<p>Felicidades <strong>{owner.name}</strong>!</p>
+				<p>La transacción <span className="orderId">{orderId}</span> se ha procesado correctamente.</p>
 				<p>Un detalle de su compra fue enviado a: <strong>{owner.email}</strong></p>
 			</div>
 			<h3>Detalle de su compra:</h3>
