@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import removeIco from "./images/remove.png"
 import "./styles.css";
 import CartProductsContext from "../../context/cartProductsContext";
 import CountersContext from "../../context/counterContext";
@@ -19,16 +20,25 @@ const CartProductCard = ({ product, isConfirmed }) => {
     <div className="cartProductCardContainer">
       <img className="imgCartProductCard" src={`../images/${product.image}.jpg`} alt={product.title} />
         <h2 className="titleCartProduct">{product.title}</h2>
-            {isConfirmed ? <span className="count">x {counter}</span> : <div className="counterCart">
+            {isConfirmed 
+            ? 
+            <span className="quantity">x {counter}</span> 
+            : 
+            <div className="counterCart">
               <button className="btnCount btnMinus" onClick={() => decrement(counter, counterId)}>-</button>
-              <span className="count">{counter}</span>
+              <span className="quantity">{counter}</span>
               <button className="btnCount btnPlus" onClick={() => increment(counter, counterId, product.stock)}>+</button>
             </div>}
-          <span className="priceCart">$ {product.price*counter}</span>
-            {isConfirmed ? null : <button href="#" className="btnCartForm" onClick={() => {
+            <span className="priceCart">$ {product.price*counter}</span>
+            {isConfirmed ? null 
+            : 
+            <button className="btnCartForm" onClick={() => {
               cartRemove({...product});
               setCounters(newCounters);
-            }}>Quitar</button>}
+            }}>
+              <img src={removeIco} alt="Icono de papelera" />
+            </button>
+            }
     </div>
   );
 };

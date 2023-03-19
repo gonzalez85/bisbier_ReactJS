@@ -12,10 +12,7 @@
 .productCard:hover {
   box-shadow: 0 0 10px 6px rgba(125, 125, 125, 0.75);
   border-color: #ccc;
-  /* position: relative;
-  left: 5px;
-  top: 5px; */
-  }
+}
 .imgProductCard {
   max-width: 33%;
   border-radius: 0.5rem 0 0 0.5rem;
@@ -48,25 +45,13 @@
   font-size: 1.3rem;
   text-align: justify;
 }
-.btnForm {
-  background-color: #111;
-  border: 2px solid #888;
-  padding: 0.5rem 0.75rem;
-  margin: 0.5rem;
-  border-radius: 0.25rem;
-  font-size: 1rem;
+.productDetailLink {
+  font-style: italic;
+  font-size: initial;
+  float: right;
   color: #fff;
   text-decoration: none;
-  cursor:pointer;
-  }
-.btnForm:active {
-  background-color: #444;
-  border-color: #ccc;
-  }
-.btnForm:hover {
-  background-color: #444;
-  border-color: #ccc;
-  }
+}
 .buttonDiv {
   display: flex;
   align-items: center;
@@ -81,18 +66,15 @@
   text-shadow: 1px 1px 3px rgb(17 17 17 / 73%);
   box-shadow: 5px 0 7px 3px rgba(155, 155, 155, 0.75);
 }
-.counter {
-  /* margin: 1rem;  */
-  display: flex;
-  align-items: center;
-  /* background-color: #111; */
-  border: 2px solid #888;
-  border-radius: 0.25rem;
-  /* padding: 0.5rem; */
-}
 .formAdd {
   display: flex;
   align-items: center;
+}
+.counter {
+  display: flex;
+  align-items: center;
+  border: 2px solid #888;
+  border-radius: 0.25rem;
 }
 .btnCount {
   color: #ccc;
@@ -106,15 +88,11 @@
 }
 .btnCount:active {
   background-color: #444;
-  }
+}
 .btnMinus:hover {
   text-shadow: 0 0 5px rgba(255, 0, 0, 0.73);
   color: #800;
-  }
-.btnPlus:hover {
-  text-shadow: 0 0 5px rgba(0, 150, 0, 0.73);
-  color: #040;
-  }
+}
 .count {
   text-shadow: 1px 1px 3px rgb(17 17 17 / 73%);
   margin: 0rem 0.5rem;
@@ -122,10 +100,26 @@
   font-weight: bold;
   align-self: center;
 }
-.productDetailLink {
-  font-style: italic;
-  font-size: initial;
-  float: right;
+.btnPlus:hover {
+  text-shadow: 0 0 5px rgba(0, 150, 0, 0.73);
+  color: #040;
+}
+.btnForm {
+  background-color: #111;
+  border: 2px solid #888;
+  padding: 0.5rem 0.75rem;
+  margin: 0.5rem;
+  border-radius: 0.25rem;
+  font-size: 1rem;
   color: #fff;
   text-decoration: none;
+  cursor:pointer;
+}
+.btnForm:active {
+  background-color: #444;
+  border-color: #ccc;
+}
+.btnForm:hover {
+  background-color: #444;
+  border-color: #ccc;
 }

@@ -13,8 +13,8 @@ const OrderConfirm = ({ orderId, owner, products, totalPrice }) => {
 			</div>
 			<h3>Detalle de su compra:</h3>
 			{products.map(product => <CartProductCard key={product.id} product={product} isConfirmed={true} />)}
-			<div className="cartProductsResume">
-        <span className="cartProductsTotal">Total: ${totalPrice}</span>
+			<div className="orderResume">
+        <span className="orderTotal">Total: ${totalPrice}</span>
       </div>
 		</>
 	);

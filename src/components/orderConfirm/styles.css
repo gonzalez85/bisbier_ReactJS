@@ -1,5 +1,5 @@
 .orderId {
-    color: #f00;
+  color: #f00;
 }
 .orderIdMessage {
     background-color: #222;
@@ -7,4 +7,18 @@
     padding: 5px;
     margin: 5px;
     margin-bottom: 15px;
+}
+.orderResume {
+  width: 90%;
+  max-width: 720px;
+  max-height: 240px;
+  margin: 10px 10px 50px;
+  display: flex;
+  align-items: center;
+  border-top: 2px dashed #888;
+  justify-content: flex-end;
+}
+.orderTotal {
+  font-weight: bolder;
+  text-shadow: 1px 1px 3px rgb(17 17 17 / 73%);
 }

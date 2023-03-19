@@ -1,6 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
 import { CircularProgress } from "@mui/material";
-import "./styles.css";
 
 import ProductContext from "../../context/productsContext";
 
@@ -29,10 +28,10 @@ const Home = () => {
       : 
       products.map(product => 
         <ProductCard 
-        key={product.id} 
-        product={product} 
-        detail={detail} 
-        countersProducts={counters}
+          key={product.id} 
+          product={product} 
+          detail={detail} 
+          countersProducts={counters}
         />
       )}
     </>

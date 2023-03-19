@@ -2,7 +2,6 @@ import React, { useEffect, useState, createContext  } from "react";
 import { db } from "../firebase/firebaseConfig"
 import { collection, query, getDocs } from "firebase/firestore";
 
-
 const CountersContext = createContext();
 
 const CountersProvider = ({children}) => {

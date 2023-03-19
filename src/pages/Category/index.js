@@ -26,7 +26,7 @@ const Category = () => {
 
   return (
     <>
-      <h1>Usted está en la categoría: <span className="categoryId">{id}</span></h1>
+      <h1>Usted está en la categoría: {id}</h1>
       {loading ? <CircularProgress color="inherit" /> 
       : 
       category.map(product => {
