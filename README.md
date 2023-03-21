@@ -5,9 +5,9 @@ Creado con cli de React [Create React App](https://github.com/facebook/create-re
 
 Dependencias utilizadas: 
 
-- [x] React Router Dom
-- [x] Material UI
-- [x] Firebase
+- [x] React Router Dom `npm i react-router-dom`
+- [x] Material UI `npm i @mui/material @emotion/react @emotion/styled`
+- [x] Firebase `npm i firebase`
 
 ## Para levantar el proyecto, utilizar el siguiente comando:
 
