@@ -13,10 +13,7 @@ const Category = () => {
   const { products } = useContext(ProductContext);
   const [loading, setLoading] = useState(false);
   let category = products.filter(data => data.category.toLowerCase()===id);
-  let countersCategory = {};
   
-  category.map(e => countersCategory["counter"+e.id] = e.quantity);
-
   useEffect(() => {
     setLoading(true);
     setTimeout(() => {
@@ -34,7 +31,6 @@ const Category = () => {
           <ProductCard 
             key={product.id} 
             product={product ? product : ""} 
-            countersProducts={countersCategory} 
           /> 
         )
       })}
