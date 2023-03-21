@@ -1,4 +1,5 @@
 .productCard {
+  width: 100%;
   max-width: 720px;
   max-height: 240px;
   margin: 10px 10px 50px;

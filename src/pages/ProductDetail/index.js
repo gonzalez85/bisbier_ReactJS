@@ -13,7 +13,9 @@ const ProductDetail = () => {
   const { products } = useContext(ProductsContext);
   const [loading, setLoading] = useState(false);
   const detail=true;
-  const product = products[id]
+  console.log(products);
+  const product = products.find(p => p.id === id)
+  console.log(product);
   
   useEffect(() => {
     setLoading(true);

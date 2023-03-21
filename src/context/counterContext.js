@@ -12,7 +12,7 @@ const CountersProvider = ({children}) => {
 
 		const getCounters = async () => {
 
-		  const q = query(collection(db, "productos"));
+		  const q = query(collection(db, "products"));
 		  const querySnapshot = await getDocs(q);
 		  const products = [];
 		  let countersProducts = {}

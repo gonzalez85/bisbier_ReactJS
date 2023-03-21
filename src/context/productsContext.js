@@ -1,7 +1,7 @@
 import { useEffect, useState, createContext } from 'react';
 
 import { db } from "../firebase/firebaseConfig"
-import { collection, query, getDocs } from "firebase/firestore";
+import { collection, query, getDocs, orderBy } from "firebase/firestore";
 
 const ProductsContext = createContext();
 
@@ -11,7 +11,7 @@ const ProductsProvider = ({children}) => {
   
   useEffect(() => {
     const getProducts = async () => {
-      const q = query(collection(db, "productos"));
+      const q = query(collection(db, "products"), orderBy("category"));
       const querySnapshot = await getDocs(q);
       const docs = [];
 

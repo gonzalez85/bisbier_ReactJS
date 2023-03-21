@@ -10,9 +10,6 @@ const Home = () => {
   const { products } = useContext(ProductContext);
   const [loading, setLoading] = useState(false);
   const detail=false;
-  let counters = {}
-
-  products.map(e => counters["counter"+e.id] = e.quantity)
 
   useEffect(() => {
     setLoading(true);
@@ -31,7 +28,6 @@ const Home = () => {
           key={product.id} 
           product={product} 
           detail={detail} 
-          countersProducts={counters}
         />
       )}
     </>

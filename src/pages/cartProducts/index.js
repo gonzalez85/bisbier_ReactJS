@@ -51,9 +51,9 @@ const CartProducts = () => {
   }, []);
 
   const buyAction = async () => {
-    const docRef = await addDoc(collection(db, "orders"), {
+    const docRef = await addDoc(collection(db, "orders"), 
       order,
-    });
+    );
 
     setOrderId(docRef.id);
     setOrderConfirmed(order)
