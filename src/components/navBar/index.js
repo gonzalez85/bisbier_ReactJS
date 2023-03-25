@@ -1,21 +1,41 @@
 import React from "react";
 import './styles.css';
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const NavBar = () => {
   return (
     <ul className="nav">
       <li>
-        <Link className="navLink" to={`/category/cervezas`}>Cervezas</Link>
+        <NavLink 
+          className={({ isActive }) => (isActive ? "navLink active" : "navLink")} 
+          to={`/category/cervezas`}
+        >
+          Cervezas
+        </NavLink>
       </li>
       <li>
-        <Link className="navLink" to={`/category/barriles`}>Barriles</Link>   
+        <NavLink 
+          className={({ isActive }) => (isActive ? "navLink active" : "navLink")} 
+          to={`/category/barriles`}
+        >
+          Barriles
+        </NavLink>   
       </li>
       <li>
-        <Link className="navLink" to={`/category/choperas`}>Alquilá tu chopera</Link>
+        <NavLink 
+          className={({ isActive }) => (isActive ? "navLink active" : "navLink")} 
+          to={`/category/choperas`}
+        >
+          Alquilá tu chopera
+        </NavLink>
       </li>
       <li>
-        <Link className="navLink" to={`/category/otros`}>Otros</Link>
+        <NavLink 
+          className={({ isActive }) => (isActive ? "navLink active" : "navLink")} 
+          to={`/category/otros`}
+        >
+          Otros
+        </NavLink>
       </li>
     </ul>
   );

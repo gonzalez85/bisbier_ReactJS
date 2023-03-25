@@ -2,9 +2,8 @@ import React, { useContext, useEffect, useState } from "react";
 
 import { db } from "../../firebase/firebaseConfig";
 import { collection, addDoc } from "firebase/firestore";
-
 import { CircularProgress } from "@mui/material";
-import "./styles.css"
+
 
 import CartProductsContext from "../../context/cartProductsContext";
 import CounterContext from "../../context/counterContext";
@@ -12,6 +11,7 @@ import CounterContext from "../../context/counterContext";
 import CartProductCard from "../../components/cartProductCard";
 import OrderConfirm from "../../components/orderConfirm";
 
+import "./styles.css"
 
 const emptyOwnerInfo = {
   name: "",
@@ -68,7 +68,7 @@ const CartProducts = () => {
         {cartProducts.length 
           ?
           <>
-            <form className="contact_form">
+            <form className="purchaseForm">
               <legend>Datos del comprador</legend>
               <input 
                 id="name" 

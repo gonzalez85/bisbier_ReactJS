@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import "./styles.css";
-import CartProductsContext from "../../context/cartProductsContext";
 import { Link } from "react-router-dom";
+import CartProductsContext from "../../context/cartProductsContext";
 import CounterContext from "../../context/counterContext";
 
 const ProductCard = ({ product, detail }) => {
@@ -13,7 +13,7 @@ const ProductCard = ({ product, detail }) => {
   const counterCartId = "counterCart"+product.id;
   const newCounters = {...counters};
   const availability = product.stock - counters[counterCartId];
-  const productToAddQuantity = counters[counterId]>=availability ? availability : counters[counterId];
+  const productToAddQuantity = counters[counterId] > availability ? availability : counters[counterId];
   
   newCounters[counterCartId] += productToAddQuantity;
   
@@ -24,31 +24,31 @@ const ProductCard = ({ product, detail }) => {
         <h2 className="titleProduct">{product.title}</h2>
         <div className="descProduct">
           {detail ? (<p>{product.fullDescription}</p>) : (
-            <><p>{product.description}</p>
-            <Link className="productDetailLink" key={product.id} to={`/product/${product.id}`}>
-              Ver mas detalles...
-            </Link></>
+            <>
+              <p>{product.description}</p>
+              <Link className="productDetailLink" key={product.id} to={`/product/${product.id}`}>
+                Ver mas detalles...
+              </Link>
+            </>
           )}
         </div>
         <div className="buttonDiv">
           <span className="price">$ {product.price}</span>
           <div className="formAdd">
-          <div className="counter">
-            <button className="btnCount btnMinus" onClick={() => decrement(productToAddQuantity, counterId)}>-</button>
-            <span className="count">
-              {productToAddQuantity}
-            </span>
-            <button className="btnCount btnPlus" onClick={() => increment(productToAddQuantity, counterId, availability)}>+</button>
+            <div className="counter">
+              <button className="btnCount btnMinus" onClick={() => decrement(productToAddQuantity, counterId)}>-</button>
+              <span className="count">{productToAddQuantity}</span>
+              <button className="btnCount btnPlus" onClick={() => increment(productToAddQuantity, counterId, availability)}>+</button>
+            </div>
+            {availability > 0 
+            ?
+            <button className="btnForm" onClick={() => {
+              cartAdd({...product});
+              setCounters(newCounters);
+            }}>Agregar al carrito</button>
+            :
+            <button className="btnFormDisabled">Sin Stock</button>}
           </div>
-          {availability > 0 
-          ?
-          <button className="btnForm" onClick={() => {
-            cartAdd({...product});
-            setCounters(newCounters);
-          }}>Agregar al carrito</button>
-          :
-          <button className="btnFormDisabled">Sin Stock</button>}
-        </div>
         </div>
       </div>
     </div>

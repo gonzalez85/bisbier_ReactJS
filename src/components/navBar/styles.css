@@ -19,3 +19,7 @@
 	text-decoration: none;
 	color: #fff;
 }
+.active {
+	font-weight: bold;
+	color: #c00;
+}

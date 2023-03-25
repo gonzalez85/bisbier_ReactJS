@@ -1,5 +1,6 @@
-import { useParams } from "react-router";
 import React, { useContext, useEffect, useState } from "react";
+
+import { useParams } from "react-router";
 import { CircularProgress } from "@mui/material";
 
 import ProductsContext from "../../context/productsContext";
@@ -13,9 +14,8 @@ const ProductDetail = () => {
   const { products } = useContext(ProductsContext);
   const [loading, setLoading] = useState(false);
   const detail=true;
-  console.log(products);
+
   const product = products.find(p => p.id === id)
-  console.log(product);
   
   useEffect(() => {
     setLoading(true);
