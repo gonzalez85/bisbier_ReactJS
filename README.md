@@ -17,3 +17,4 @@ Dependencias utilizadas:
 ```
 REACT_APP_BD_API_KEY = "AIzaSyAElQBWc1FvrCH4fj1YiRkUNFHCtjQgfJw"
 ```
+![Animation5](https://user-images.githubusercontent.com/11933708/228186424-29dafed5-512d-4bbc-8669-7ea8641e809c.gif)
